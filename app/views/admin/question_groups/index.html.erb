@@ -1,0 +1,25 @@
+<h1>Question groups</h1>
+
+<%= link_to "New Question Group", new_admin_question_group_path %>
+
+<table class="sortable table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th><%= "# Id" %></th>
+      <th><%= glyph(:tasks, :white)+"Text" %></th>
+      <th>Type</th>
+      <th><i class="icon-pencil icon-white"></i>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @question_groups.each do |question_group| %>
+      <tr class="question_group">
+        <!-- TODO: Don't show link_to action if nothing to edit beneath -->
+        <td class="bold"><%= question_group.id %></td>
+        <td><%= question_group.text %></td>
+        <td><%= question_group.display_type %></td>
+        <td class="grey"><%= link_to 'Edit', edit_admin_question_group_path(question_group) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

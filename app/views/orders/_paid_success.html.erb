@@ -1,0 +1,64 @@
+<!-- 2.4.3. Startup selection -thank you
+  ==========================================
+  =========================================== -->
+<div class="mid-background m-67-top padding-bottom expert-page">
+  <div class="container">
+
+<div id="dashboard" class="shadow-box unselect">
+
+<!-- ============== Introduction ============= -->
+  <div class="row-fluid introduction-box">
+    
+    <div class="span3"> 
+      <!-- Place for video (see Ask Expert Page) - do NOT Delete this-->
+    </div><!-- /span3-->
+
+
+
+    <div class="span8">
+    <div class="pull-left intro-box">
+      <h1>Thank you</h1>
+      <p class="intro"><a href="#">View receipt</a></p>
+    </div><!-- /pull-left-->    
+    </div><!-- /span-->
+
+    
+    
+  </div><!-- and row-fluid introduction-box-->
+  <!-- ============== and Introduction ============= -->
+<div id="form-row">
+    <div class="row-fluid"><!-- row-fluid (form-box)-->
+      <div class="span9 offset2">
+          
+          <!-- ============== Input field ============= -->
+          <div class="row-fluid">
+          <div class="span10 offset2 form-row experts-form">
+            <div class="form-inline">                     
+                <div class="form-box ">
+                  
+                  <h4>You have successfully upgraded your package to <%= @idea.package.name %>.</h4>
+
+                  <div id="button-row" class="m-20-top">
+                    <div class="row-fluid">
+                      <%= link_to "Continue".html_safe, ideas_path,:class => "btn btn-success" %>
+                    </div><!-- /row-fluid -->
+                  </div><!-- /and (id) button-row -->
+
+                </div><!-- /form-box-->
+            </div><!-- /form-inline-->
+          </div><!-- /span7 -->
+          </div><!-- /row-fluid --> 
+          <!-- ============== and Input field ============= -->
+
+      </div><!-- /span9 -->
+    </div><!-- /(id) form-row --> 
+  </div>
+
+
+</div><!--/dashboard-->
+
+
+
+
+  </div><!--/container-->
+</div><!--/mid-background-->

@@ -1,0 +1,39 @@
+<%= simple_nested_form_for [:admin, @survey_section, @question] do |f| %>
+  <%= render "admin/questions/fields", :f => f %>
+  <hr />
+  <h3>Answers</h3>
+  <%= f.fields_for :answers %>
+  <p><%= f.link_to_add "Add an answer", :answers %></p>
+  <hr />
+  <% unless @question.new_record? %>
+  <div class="well">  
+    <h4>Dependency</h4>
+    <p>
+      <i>
+        A dependency consists of one rule and any number conditions. Each condition has a label, eg. A, B, C. The condition labels must be unique within each dependency. The dependency rule sets the relationship between the conditions using simple logic, eg.<br/>
+        A and B - both condition A and condition B must be met for this question to be displayed.<br/>
+        A or B or C - any one of the three conditions must be met.<br/>
+        You can use parentheses to make more complex rules, eg. (A or C) and (B or D), ((A or B or C) and (D or E)) or F.<br/>
+        Each individual condition is defined by a question it relates to and the answer that must be given for that question for this condition to be met.
+      </i>
+    </p>
+    <%= f.fields_for :dependency do |d| %>
+      <%= d.input :rule, input_html: { :style => "width: 200px;" } %>
+      <hr />
+      <h5>Conditions</h5>
+      <%= d.fields_for :dependency_conditions do |dc| %>
+        <%= dc.input :rule_key, :label => "Condition label", input_html: { :style => "width: 80px;" }  %>
+        <%= dc.association :question, :collection => @question.other_questions_from_survey.unscoped, input_html: { :style => "width: 500px;", :class => "condition_question_select" } %>
+        <%= dc.association :answer, :collection => (dc.object.question ? dc.object.question.answers : {}), input_html: { :style => "width: 500px;" }  %>
+        <%= dc.input :operator, :label => false, input_html: { :style => "width: 100px;", :value => "==", :type => :hidden }  %>
+        <%= dc.link_to_remove "Remove this condition" %>
+      <% end %>
+      <p><%= d.link_to_add "Add a condition", :dependency_conditions %></p>
+      <hr />
+      <%= d.link_to_remove "Remove dependancy" %>
+    <% end %>
+    <p><%= f.link_to_add "Add dependancy", :dependency, :style => @question.dependency ? "display:none;" : "" %></p>
+  </div>
+  <% end %>
+  <%= f.submit %>
+<% end -%>

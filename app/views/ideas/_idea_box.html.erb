@@ -1,0 +1,29 @@
+  <div class="span3 m-l-r">
+
+    <div class="shadow-box">
+          <div class="image-box">
+            <%= image_tag(("startup.png"), :class => "ribbon") %>
+            <div class="image-box-img">
+              <div class="pic">
+                <%= link_to image_tag(idea.photo.url(:small), :class => "image"), idea %>               
+              </div> <!--/pic-->
+              <div class="name">
+                <% title = breaking_word_wrap(idea.title,16) %>
+                <%= link_to title, idea_path(idea) %>
+              </div>         
+            </div><!--/image-box-img--> 
+            <div class="activity-box">
+              <p><%= truncate(idea.description, :length => 85, :omission => '...') %></p>
+            </div><!-- /activity-box-->           
+          </div><!--/image-box-->
+          <div class="team-box-img">
+            <h5>Idea Team</h5>            
+            <ul>
+             <% idea.users.each do |user|%>
+                <li><%= link_to image_tag(user.image?) + user.name, profile_path(user) %></li>
+              <% end %>
+            </ul>          
+          </div><!-- /team-box-img-->
+    </div><!-- /shadow-box -->
+
+   </div><!-- /span3-->

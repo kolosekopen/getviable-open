@@ -1,0 +1,4 @@
+<%= render "/public_activity/shared/notification", :idea => @event.trackable.commentable.idea, :user => @event.owner %>
+<p>
+	<span class="bold"><%= @event.trackable.commentable.idea.title %></span>-<span class="bold"> <%= @event.owner.name %></span> commented <span class="bold"><%= @event.trackable.commentable.survey_section.title %></span> in <%= @event.trackable.commentable.survey_section.stage.title %>
+</p>

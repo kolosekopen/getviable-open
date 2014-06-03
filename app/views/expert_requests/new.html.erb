@@ -1,0 +1,169 @@
+<!-- Ask expert page
+  ================================
+  =================================-->
+<div class="mid-background padding-bottom expert-page">
+  <div class="container">
+      
+  <%= render 'partials/idea_header', :idea => @idea %>
+
+
+
+<!-- Ask expert page
+  ================================
+  =================================-->
+<div id="dashboard" class="shadow-box unselect">
+
+<!-- ============== Introduction ============= -->
+  <div class="row-fluid introduction-box">
+    
+    <div class="span3"> 
+      <!--div class="task-video">
+         //Button to trigger modal
+          <a href="#myModal" role="button" data-toggle="modal"><img alt="Video-play" src="/assets/video-play.png"></a>
+ 
+        //Modal (Video appear)
+        <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <img src="/assets/remove.png">
+            </button>
+          </div>
+          <div class="modal-body" style="display:block; width:100%;">
+            <div id="youtube-player-container" class="jquery-youtube-tubeplayer"> <iframe frameborder="0" allowfullscreen="" id="tubeplayer-player-container-36b46318-23d3-4ca1-88f2-379cbc5451a4" title="YouTube video player" height="336" width="568" src="http://www.youtube.com/embed/http://www.youtube.com/embed/ZOCvapc45vE?autoplay=0&amp;autohide=1&amp;controls=1&amp;loop=0&amp;playlist&amp;rel=0&amp;fs=1&amp;wmode=transparent&amp;showinfo=0&amp;modestbranding=1&amp;iv_load_policy=1&amp;start=0&amp;theme=dark&amp;color=red&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fgetviable.local%3A3000"></iframe></div>
+            <script>
+            jQuery("#youtube-player-container").tubeplayer({
+              width: 568, // the width of the player
+              height: 336, // the height of the player
+              allowFullScreen: "true", // true by default, allow user to go full screen
+              initialVideo: "http://www.youtube.com/embed/ZOCvapc45vE", // the video that is loaded into the player
+              preferredQuality: "default",// preferred quality: default, small, medium, large, hd720
+              onPlay: function(id){}, // after the play method is called
+              onPause: function(){}, // after the pause method is called
+              onStop: function(){}, // after the player is stopped
+              onSeek: function(time){}, // after the video has been seeked to a defined point
+              onMute: function(){}, // after the player is muted
+              onUnMute: function(){} // after the player is unmuted
+            });
+                        $('#myModal').on('hidden', function () {
+              jQuery("#youtube-player-container").tubeplayer("stop");
+            })
+            </script>
+            <div class="modal-body" style="display:block; width:100%;">
+            </div>
+          </div>
+          <div class="modal-footer">
+
+          </div>
+        </div>//id="myModal"
+
+        </div--><!-- /task-video -->      
+    </div><!-- /span3-->
+
+
+
+    <div class="span8">
+    <div class="pull-left intro-box">
+      <h1>Ask experts for Advice and Guidance</h1>
+      <p class="intro">Everyone needs a helping hand from time to time. We've added this to get you easy access to online business expertise, no matter where you are in the process.</p>
+    </div><!-- /pull-left-->    
+    </div><!-- /span-->
+
+    
+    
+  </div><!-- and row-fluid introduction-box-->
+  <!-- ============== and Introduction ============= -->
+<div id="form-row">
+    <div class="row-fluid"><!-- row-fluid (form-box)-->
+      <div class="span9 offset2">
+       
+
+
+      <%= form_for @expert_request do |f|%>
+          <%= f.hidden_field :idea_id, :value => @idea.id %>
+          <%= f.hidden_field :survey_section_id, :value => @section.id %>
+          <!-- ============== Input field ============= -->
+          <div class="row-fluid">
+          <div class="span10 offset2 form-row experts-form">
+            <div class="form-inline">                     
+                <div class="form-box ">
+
+                  <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Note:</strong> 'Ask experts' requests are always kept private to the team working on the idea.
+                  </div><!--/alert-->
+                  <% if flash[:notice] %>
+                  <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>Error:</strong> <%= flash[:notice]%>
+                  </div><!--/alert-->
+                  <% end %>
+
+                  <fieldset>
+                    <legend>What would you like to ask about?</legend>
+                    <%= f.select("support_type", ExpertRequest::SERVICES.collect {|p| p.reverse }, {:include_blank => 'Select one...'}, :id => "expert-type") %>
+                  </fieldset>
+
+                  <fieldset id ="expert-subject" style="display:none">
+                    <legend>You selected other, please add a subject</legend>
+                    <%= f.text_field :subject, :placeholder => "Insert subject here (this will make easier for you to find in the future)" %>
+                  </fieldset>
+
+                  <fieldset>
+                    <legend>Please tell us more (to help, we have added the content of the task you were on):</legend>
+                    <%= f.text_area :problem, :value => @description %>
+                  </fieldset>
+
+
+
+                  <fieldset>
+                    <label class="checkbox">
+                      <%= f.check_box :terms_conditions %>
+                      I agree to the <%= link_to "Terms and Conditions", terms_path, :target => "_blank" %>
+                    </label>
+                  </fieldset> 
+
+                  <div id="button-row">
+                    <div class="row-fluid">
+                      <%= f.submit "Ask an expert &raquo;".html_safe, :class => "btn btn-warning", :disable_with => "Submitting..." %>
+                    </div><!-- /row-fluid -->
+                  </div><!-- /and (id) button-row -->
+
+                </div><!-- /form-box-->
+            </div><!-- /form-inline-->
+          </div><!-- /span7 -->
+          </div><!-- /row-fluid --> 
+          <!-- ============== and Input field ============= -->
+
+        <% end %>     
+      </div><!-- /span9 -->
+    </div><!-- /(id) form-row --> 
+  </div>
+
+  <script type="text/javascript">
+$(document).ready(function(){
+  $('#expert-type').change(function() {
+    if ($('#expert-type').val() == 110){
+      $('#expert-subject').show();
+    }
+    else{      
+      $('#expert-subject').hide();
+    }
+  });
+});
+ </script>
+
+
+
+
+</div><!--/dashboard-->
+
+
+
+
+  </div><!--/container-->
+</div><!--/mid-background-->
+
+
+
+
+

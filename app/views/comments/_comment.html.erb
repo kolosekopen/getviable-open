@@ -1,0 +1,11 @@
+            <div class="row-fluid">
+                <div class="forum-user">
+                  <%= image_tag comment.user.image? %>
+                </div><!-- /forum-user-->
+                <div class="comments-replay">
+                    <p><%= link_to comment.user.try(:name), profile_path(comment.user) %> <!--Zizzam can now access:--><br>
+                      <%= comment.comment %>
+                    </p>
+                    <p class="info"><%= comment.updated_at%></p>
+                </div><!-- /comments-replay -->
+            </div>

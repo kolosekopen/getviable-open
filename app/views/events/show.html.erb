@@ -1,0 +1,12 @@
+
+<!-- 2.1.0 IDEA COMMENTS PAGE
+	========================== -->
+<div class="row-fluid m-20-top">
+	<div class="offset2 span8">
+		<div class="shadow-box">
+        <% activity =  event_activity(@event) %>
+        <% sentence = event_sentence(@event, activity)%>
+        <%= render "/groups/activity_item", :activity => activity, :sentence => sentence %>	         
+	    </div>
+	</div><!--/offset-->
+</div><!--/row-fluid-->

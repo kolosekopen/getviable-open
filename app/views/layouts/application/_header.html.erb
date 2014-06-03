@@ -1,0 +1,49 @@
+  <!-- ______________________________ Navigation Bar ______________________________ -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--  /Navigation Bar responsive  -->
+           
+                  <%= link_to image_tag(Setting.header_logo), root_path,
+      :class=> "brand", :title =>"Get Viable Start up your idea"%>
+      <% if !currently_on_page?(new_user_registration_path, new_user_session_path)%>
+        <div class="pull-right">
+
+
+        <% if user_signed_in? %>
+            <% if current_user.admin? %>
+              <%= link_to "Admin", admin_path %>
+            <% end %>
+            <%= link_to "Sign out", destroy_user_session_path, :class => "btn btn-small btn-primary dark-blue-btn" %>
+            <%= link_to "Settings", edit_user_registration_path, :class=>"btn btn-small btn-primary dark-gray-btn" %>
+          <% else %>
+            <%#= link_to "Sign up", new_user_registration_path, :class=>"btn btn-small btn-primary dark-gray-btn" %>
+            <%= link_to "Login", new_user_session_path, :class => "btn btn-small btn-primary dark-blue-btn" %>
+        <% end -%>
+        </div><!-- /pull-right-->
+
+          <div class="nav-collapse collapse ">    
+              <ul class="nav pull-right">   
+                   <li>
+                    <%= link_to "Home", root_path %>
+                   </li> 
+                   <li>
+                    <%= link_to "About Us", about_path %>
+                   </li>   
+                   <% if Setting.enable_payments == 'true'%>        
+                   <li>
+                    <%= link_to "Pricing", pricing_path %>
+                   </li>                   
+                   <% end %>
+                   <li>
+                    <%= link_to "Help", "http://support.getviable.com", :target =>'_blank' %>
+                  </li>
+              </ul>
+         
+            </div><!--/.nav-collapse -->
+          <% end %>
+          </div>
+        </div>
+      </div>
+
+<!-- ______________________________ /and Navigation Bar ______________________________ -->

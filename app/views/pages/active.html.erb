@@ -1,0 +1,26 @@
+<% title "GetViable - Most Active" %>
+
+<div id="logged" class="mid-background">
+
+  <div  class="container">
+
+    <!-- _____________________________ Logged in section __________________________ -->
+  <div class="row-fluid logged-bg"> 
+    <div class="row-fluid box-row-title">
+      <h1>Most Active</h1>
+      <p>Most progress this week</p>
+      <%#= link_to "All Active &raquo;".html_safe, active_path %>
+    </div><!-- /row-fluid--> 
+
+    <!-- _____________________________ Featured -row __________________________ -->
+    <div class="row-fluid"> 
+
+      <% @most_active.each do |idea|%>
+        <%= render "ideas/idea_box", :idea => idea %>
+      <% end unless @most_active.empty? %>
+
+    </div><!-- /row-fluid -->
+  </div>
+
+  </div><!--/container-->
+</div><!-- /mid-background-->

@@ -1,0 +1,9 @@
+<div class="forum-user">
+	          				<%= image_tag activity.idea.user.image? %>
+	          			</div><!-- /forum-user-->
+	          			<div class="comments-replay">
+	          				<p><a href=""><%= link_to activity.idea.user.name, profile_path(activity.idea.user) %></a> <!--Zizzam can now access:--><br>
+	          					<%= activity.content? %>
+	          				</p>
+	          				<p class="info"><%= activity.updated_at%></p>
+	          			</div><!-- /comments-replay -->

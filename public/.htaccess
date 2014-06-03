@@ -1,0 +1,1 @@
+RedirectMatch 301 /online-business-ideas/(.*) http://blog.getviable.com/online-business-ideas//$1

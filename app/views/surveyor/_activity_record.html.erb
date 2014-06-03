@@ -1,0 +1,34 @@
+
+	          		<% if !current_page?(idea_path(idea)) && (idea.is_owner?(current_user) || idea.member?(current_user))  %>
+	          		<div id="comment" class="row-fluid"><!-- comment -->
+	          				     <!--div class="comment-info">
+	          						<ul>
+	          							<li>
+	          								<i class="icon-arrow-left"></i>
+	          								<a href="">View earlier comments</a>  
+	          							</li> 
+	          						</ul>
+	          					</div-->
+	          			<%= render "surveyor/activity_header", :activity => activity %>
+	          		</div><!-- /row-fluid (comment) -->
+	          		<% end %>
+                    <% if !activity.comments.empty?%>
+	          		<div class="row-fluid">
+	          			<div id="replay">
+	          				<!--div class="row-fluid">
+	          					<div class="comment-info">
+	          						<ul>
+	          							<li>
+	          								<i class="icon-comment"></i>
+	          								<a href="">View earlier comments</a>  
+	          							</li> 
+	          						</ul>
+	          					</div>
+	          				</div--><!--/row-fluid-->
+	          				<% activity.comments.each do |comment|%>
+	          				<%= render "/comments/comment", :comment => comment %>
+	          				<% end unless activity.comments.empty?%>
+	          			</div><!-- /replay-->
+	          		</div><!-- /row-fluid-->
+	          		<% end %>
+

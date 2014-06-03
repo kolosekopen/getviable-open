@@ -1,0 +1,162 @@
+<% if current_user.nil? %>
+  <% title "GetViable - Startup Your Idea Today" %>
+<!-- ______________________________ Video row ______________________________ -->
+<div class="mid-background inner-shadow">
+  <div class="container">
+    <div class="row-fluid video-row">
+      <div class="span6"> 
+      <div class="vider-cover">
+        <iframe src="http://fast.wistia.net/embed/iframe/86cigtf9xf?controlsVisibleOnLoad=true&plugin%5BpostRoll-v1%5D%5Braw%5D=%3Cdiv%20style%3D%22text-align%3Acenter%3B%22%3E%3Ca%20href%3D%22http%3A%2F%2Fgetviable.herokuapp.com%2Fusers%2Fsign_up%22%20style%3D%22color%3A%23ffffff%3Btext-decoration%3Anone%3B%22%20target%3D%22_blank%22%3EGet%20Started%20Today%21%3C%2Fa%3E%3C%2Fdiv%3E&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BbackgroundColor%5D=%23616161&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5Bcolor%5D=%23ffffff&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BfontFamily%5D=Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BfontSize%5D=72px&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BtextAlign%5D=left&smallPlayButton=false&version=v1&videoHeight=338&videoWidth=600&volumeControl=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="100%" height="265px"></iframe>
+             <div class="vider-shadow">
+              <img src="/images/video-shadow.png">
+             </div><!-- shadow below video -->
+      </div><!-- /vide-cover--> 
+      </div><!-- /span-->
+
+      <div class="span6 video-text-box m-20-top">
+        <h1>Validate your idea today</h1>
+        <a href="<%= new_user_session_path %>" class="btn btn-large btn-success get-started "> GET STARTED <i class="icon-two-arrows"></i></a>        
+        <p>We keep the detail of your ideas private.</p> 
+      </div><!-- /span--> 
+  
+    </div><!-- /row-fluid (AND VIDEO ROW)-->
+
+  </div><!--/container-->
+</div><!-- /mid-background-->
+
+<!-- _________________________ How GetViable works? ____________________________ -->
+<hr>
+<div class="grey-background">
+<div class="container">
+    <div class="row-fluid central-headline"><!-- Headline-->
+      <h3 class="uppercase blue-headline">GETVIABLE IS AN ONLINE ACCELERATOR</h3>
+    </div><!-- /row-fluid-->
+  
+  <div class="row-fluid m-20-bott">
+    <!-- ============ Colummn 1 =================== --> 
+      <div class="span4 as-used-img">    
+        <%= image_tag("home/1-2-3-4-blue.png") %>   
+          <h4>We guide you to a <br>successful startup</h4>
+      </div><!--/span-->
+
+    <!-- ============ Colummn 2 =================== -->
+      <div class="span4 as-used-img">
+        <%= image_tag("home/experts-blue.png") %>
+          <h4>We connect you to<br>teams and advice</h4>
+      </div><!--/span-->
+
+    <!-- ============ Colummn 3 =================== -->
+      <div class="span4 as-used-img">    
+        <%= image_tag("home/devices-blue.png") %>  
+          <h4>We find help to build<br> your startup</h4>
+      </div><!--/span-->
+
+
+
+   </div><!--row--> 
+         <h4 class=" m-20-top center clear m-20-bott normal text-grey" style="font-size: 20px;">We keep  the detail  of  your  ideas private <span class="bold">- you decide  who sees  what.</span><br> 
+We’re here  to  help  you every step  of  the way. 
+<br>  </h4>
+</div><!--/container-->
+</div><!-- /grey-background -->
+<!-- _________________________ Testamonials ____________________________ -->
+
+<div class="grey-background inner-shadow">
+<div class="container">
+   
+  
+  <div class="row-fluid testamonials new-list ">
+     <div class="span4"><!-- Headline-->
+      
+    
+      <h3  class="central-headline normal dark-grey">We're helping people just like you!</h3>
+      <p class="just text-grey">“Thanks!  You helped  me  ﬁgure out my  
+        Minimum Viable  Product... ”<span class=" bold">- Sue, USA</span></p>
+        
+      <p class="just text-grey">“I now understand  who my  customer  
+        REALLY  is.”<span class=" bold">- Ian, AU</span></p>
+      <p class="just text-grey">“I  had no  idea  where to  start.  You 
+        helped  me  understand  how to  build my  app.”<span class=" bold">- Helen, UK</span></p>
+      </div><!-- /row-fluid-->
+
+      <div class="span8">
+      <div class="row-fluid">
+        <h3  class="central-headline normal">We're negotiating some great deals to <br>help you get started!</h3>
+      </div>
+
+             
+      <div class="span6 center">
+                <p class="text-grey">Get  <span class="green bold">$100</span>  credit  towards oDesk</p>
+                <img src="/assets/ODesk_logo.png" class="first-img">
+                <p>Access talent  from  around  the world</p>
+         
+      </div>
+
+      <div class="span5 center">     
+                <p class="text-grey">Get  <span class="green bold">$500</span>  Amazon  credit  as  one of  our most  viable  startups</p>
+                <img src="/assets/AWS_LOGO.png">
+                <p>Launch your  startup on  Amazon  Web 
+      Services</p>
+      </div>
+      </div><!--/span8-->
+
+  </div><!--row--> 
+</div><!--/container-->
+</div><!-- /grey-background -->
+<!-- _____________________________ Central section __________________________-->
+<hr>
+<div class="mid-background">
+<div class="container">
+
+<div class="row-fluid">
+  <div id="logged">
+
+  
+  <%= render "promo", :featured => @featured, :most_active => @most_active, :newest => @newest %>
+</div>
+  <!-- ============ Load more =================== -->
+  <!--div class="row-fluid load-more">
+    <a href="" class="btn">Load more</a>
+  </div--><!-- /load more-->
+</div><!-- /row-fluid (and of colummns)-->
+</div><!-- /container -->
+</div><!-- /mid-background-->
+
+
+
+
+
+
+<!-- _________________________ As Used Section ____________________________ -->
+
+<hr>
+<div class="mid-background">
+<div class="container">
+  <div class="row-fluid central-headline"><!-- Headline-->
+    <h3>Used by</h3>
+  </div><!-- /row-fluid-->
+
+  <div class="row-fluid as-used">
+      <ul>
+        <!--li><%= image_tag("unimelb-logo.png")%></li>
+        <li><%= image_tag("rmit-university-logo.png")%></li-->
+          <li><img src="/assets/startup-weekend-logo.png"></li>
+          <li><img src="/assets/angelhack-200w-logo.png"></li>
+          <li><img src="/assets/launch48-logo.png"></li>
+      </ul>
+
+  </div><!-- /row-fluid-->
+</div><!-- /container-->
+</div><!-- /mid-background-->
+
+
+
+<% else %> <!-- FOR CASE USER IS LOGGED IN -->
+
+<div id="logged" class="mid-background">
+
+  <%= render "promo", :featured => @featured, :most_active => @most_active, :newest => @newest %>
+  
+</div><!-- /mid-background-->
+
+<% end %>

@@ -1,0 +1,66 @@
+<div  class="container">
+    <!--div class="row-fluid idea-here-row">
+      <div class="span6 pull-right">
+        <div class="pull-right">
+          <a href="" class="btn btn-success">
+            <i class="icon-arrow-up icon-white"></i>
+            Your ideas are here</a>
+        </div>
+      </div><
+    </div--><!-- /row-fluid-->
+
+    <!-- _____________________________ Logged in section __________________________ -->
+  <div class="row-fluid logged-bg"> 
+    <div class="row-fluid box-row-title">
+      <h1>Featured</h1>
+      <p>Picked by GetViable Team</p>
+      <%= link_to "All Featured &raquo;".html_safe, current_user.nil? ? featured_path : featured_path %>
+    </div><!-- /row-fluid--> 
+
+    <!-- _____________________________ Featured -row __________________________ -->
+    <div class="row-fluid"> 
+
+      <% featured.each do |idea|%>
+        <%= render "ideas/idea_box", :idea => idea %>
+      <% end unless featured.empty? %>
+
+    </div><!-- /row-fluid -->
+  </div>
+    <!-- __________________________ and Logged in section __________________________ -->
+    <!-- _____________________________ Most Active section __________________________ -->
+  <div class="row-fluid logged-bg"> 
+    <div class="row-fluid box-row-title">
+      <h1>Most Active</h1>
+      <p>Most progress this week</p>
+      <%= link_to "All most active &raquo;".html_safe, current_user.nil? ? active_path : active_path %>
+    </div><!-- /row-fluid--> 
+
+    <!-- _____________________________ most active -row __________________________ -->
+    <div class="row-fluid"> 
+      
+      <% most_active.each do |idea|%>
+        <%= render "ideas/idea_box", :idea => idea %>
+      <% end unless most_active.empty? %>
+
+    </div><!-- /row-fluid -->
+  </div>
+    <!-- __________________________ and Most active section __________________________ -->
+  <!-- _____________________________ Newest startups section __________________________ -->
+  <div class="row-fluid logged-bg"> 
+    <div class="row-fluid box-row-title">
+      <h1>Newest Startups</h1>
+      <p>Newest startups</p>
+      <%= link_to "All newest &raquo;".html_safe, current_user.nil? ? newest_path : newest_path %>
+    </div><!-- /row-fluid--> 
+
+    <!-- _____________________________ Newest -row __________________________ -->
+      <div class="row-fluid"> 
+      
+      <% newest.each do |idea|%>
+        <%= render "ideas/idea_box", :idea => idea %>
+      <% end unless newest.empty? %>
+
+    </div><!-- /row-fluid -->
+  </div>
+    <!-- __________________________ and Newest Startups section __________________ -->
+</div><!--/container-->

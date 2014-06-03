@@ -1,0 +1,1 @@
+PublicActivity::ORM::ActiveRecord::Activity.table_name = 'events'

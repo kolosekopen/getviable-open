@@ -1,0 +1,57 @@
+h1. GetViable
+
+A Rails application. Features a user and admin system with Facebook login. It is deployable to Heroku.
+
+h2. Gemfile
+
+* "pg":http://rubygems.org/gems/pg for PostgreSQL
+* "jQuery":https://github.com/rails/jquery-ujs
+* "Devise":https://github.com/plataformatec/devise for authenticating users with "OmniAuth":https://github.com/intridea/omniauth for Facebook login
+* "Kaminari":https://github.com/amatsuda/kaminari for pagination
+* "CarrierWave":https://github.com/jnicklas/carrierwave for file uploads
+* "MetaSearch":https://github.com/ernie/meta_search for searching users
+
+For testing and development:
+
+* "Rspec":https://github.com/dchelimsky/rspec
+* "Cucumber":https://github.com/aslakhellesoy/cucumber with "Capybara":https://github.com/jnicklas/capybara
+* "Database Cleaner":https://github.com/bmabey/database_cleaner
+* "Debugger":https://github.com/cldwalker/debugger
+* "Factory Girl":https://github.com/thoughtbot/factory_girl_rails
+* "Awesome Print":https://github.com/michaeldv/awesome_print
+* "Email Spec":https://github.com/bmabey/email-spec
+* "Shoulda":https://github.com/thoughtbot/shoulda
+* "Thin":https://github.com/macournoyer/thin
+
+h2. Setup
+
+* Make sure you have rvm and Ruby 1.9.2.
+* Install dependencies from Gemfile: @bundle install --path vendor/bundle@.
+* Create your @config/database.yml@, create the database and run the migrations.
+* For Facebook login to work, export environment variables @FACEBOOK_APP_ID@ and @FACEBOOK_APP_SECRET@.
+
+* After making questions and populating database it is critical to group sections into stages
+
+h2. Database
+  * bundle exec rake db:create
+  * bundle exec rake db:migrate
+  * bundle exec rake surveyor:questions
+  * bundle exec rake db:seed
+
+h2. Tests
+  * In order to debug test you can add save_and_open_page call to a line where you would like to show page that is rendered
+  * bundle exec spork
+  * bundle exec rspec spec/
+
+h2. License
+
+h2. Usage:
+  * Render glyph icons in code glyph(:lock, :white) => <i class="icon-lock icon-white"></i>
+  * Use raw_glyph for rendering inside link_to  => link_to raw_glyph(:white) + "Some title"
+
+  * bundle exec rake surveyor FILE=surveys/get_viable_questions_leslie_v3-2-2.rb
+
+h2. Support:
+  * This code is now Open Source. It's free to be used.
+  * This code is not actively maintained. But in need of urgent support, please create ticket or send email to office@kolosek.com
+

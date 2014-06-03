@@ -1,0 +1,12 @@
+<% if @idea.errors.any? %>
+$('input[type="submit"]').attr('disabled','disabled');
+$('input[type="submit"]').attr('value','Please wait...');
+$('#errors').empty();
+$('#errors').html("<%= escape_javascript(render 'shared/js_errors', :target=> @idea) %>");
+$('input[type="submit"]').removeAttr('disabled');
+$('input[type="submit"]').attr('value','Submit');
+<% else %>
+$('input[type="submit"]').attr('disabled','disabled');
+$('input[type="submit"]').attr('value','Please wait...');
+window.location = '<%= edit_tour_path(:idea_id => @idea.id) %>'
+<% end %>

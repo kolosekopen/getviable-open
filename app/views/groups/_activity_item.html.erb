@@ -1,0 +1,20 @@
+<% idea = activity.idea %>
+<div id="activity-<%=activity.id%>" class="shadow-box">
+    <div class="stage-row">
+      <%= render "/surveyor/activity_forum_header", :idea => idea, :activity => activity %>
+
+      <div class="forum-body">
+
+       <%= render "surveyor/activity_record", :activity => activity, :idea => idea %>
+
+        <div class="row-fluid">
+         <div  id="post-answer">
+          <div><!-- replay -->      
+            <%= render "/comments/form", :commentable => activity %>
+          </div><!-- /span (replay) -->
+         </div><!-- /id post-answer-->
+        </div><!-- /row-fluid-->
+
+      </div><!-- /forum-body-->
+  </div>
+</div><!--/shadow-box-->

@@ -1,0 +1,84 @@
+<% title "GetViable - Profile" %>
+<!-- ______________________________ mid background ______________________________ -->
+
+<div class="mid-background">
+
+  <div  class="container">
+
+<!-- _____________________________ User profile headline ______________________________ -->
+    <div id="your-idea" class="row-fluid">  
+      <!--div class="pull-left profile-headline">
+        <p>Idea Name</p>
+      </div--><!-- /span6-->
+ 
+      <div class="pull-left profile-btn">
+        <%= render "partials/back_button" %> 
+      </div><!-- /span 6 -->
+    </div><!-- /(id your-idea)-->
+<!-- _____________________________ User profile information______________________ -->
+    <div class="row-fluid logged-bg">
+      <div class="shadow-box profile-information">
+      <div class="row-fluid">
+      <div class="profile-info-box media">
+          <div  class="default-profile pull-left">
+            <%= image_tag @user.image? %>
+          </div><!-- /default-profile-->
+          <!--a href="#" class="btn btn-info">
+            <i class="icon-eye-open icon-white"></i> See Activity</a-->
+            <div class="profile-info-text media-body">
+          <h3 class="p-name media-heading"><%= @user.name %></h3>
+          <p class="profile-basic-info location text-grey">
+            <!--span>Location: </span--><%= @user.location %></p>
+          <p><%= @user.description %></p>
+          
+          </div>
+
+        </div><!-- /row-fluid-->
+        </div><!-- /row-fluid-->
+ 
+
+
+
+      <!--div class="row-fluid network-row">
+        <ul class="personal-network pull-left">
+          <li><a>personal-website.com</a></li>
+          <li><a>personal-blog.com</a></li>
+        </ul>
+        <ul class="social-network pull-right">
+          <li><%#= link_to image_tag("glyphicons/glyphicons_377_linked_in@2x.png"), "#"%></li>
+          <li><%#= link_to image_tag("glyphicons/glyphicons_390_facebook@2x.png"), "#"%></li>
+          <li><%#= link_to image_tag("glyphicons/glyphicons_386_google_plus@2x.png"), "#"%></li>
+          <li><%#= link_to image_tag("glyphicons/glyphicons_392_twitter@2x.png"), "#"%></li>
+          <li><%#= link_to image_tag("crunchbase-l.png"), "#"%></li>
+          <li><%#= link_to image_tag("angellist.png"), "#"%></li>
+        </ul>
+      </div--><!-- /network row-fluid-->
+    </div><!-- /row-fluid-->
+    </div><!-- /shadow-box-->
+
+    <% if !@user.ideas.nil? %>
+	  <div class="row-fluid">
+	      <div id="your-idea" class="row-fluid">  
+	        <div class="pull-left">
+	          <p>Ideas</p>
+	        </div><!-- /span6-->
+	   
+	        <div class="pull-right">
+            <!--a  href="#myModalIdea" role="button" data-toggle="modal" data-remote="true" class ="btn btn-success pull-right"><i class="icon-plus-sign icon-white"></i>Add an Idea</a-->
+	        </div><!-- /span 6 -->
+	      </div><!-- /(id your-idea)-->
+
+        <%= render :partial => "/ideas/idea", :collection => @user.ideas.where(:group_id => nil) %>
+        <% group_ids = @user.groups.map(&:id)%>
+        <% group_ideas = @user.ideas.where("group_id IN (?)", group_ids) unless group_ids.nil? %>
+        <%#throw%>
+        <% group_ideas.each do |idea|%>
+          <% @idea = idea %>
+          <%= render :partial => "/ideas/idea", :idea => @idea if current_user.group?(idea.group_id) %>
+        <% end unless group_ideas.nil?%>
+
+	  </div><!-- /row-fluid-->
+	<% end %>
+
+  </div><!-- /container-->
+</div><!-- /mid-background-->

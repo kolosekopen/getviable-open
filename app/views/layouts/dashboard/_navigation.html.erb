@@ -1,0 +1,42 @@
+<div class="sub-navbar">
+<div class="bottom-nav">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="company-name">
+        <div class="company-image">
+          <%= image_tag(idea.photo.url(:micro) || idea.photo.url(:square)) %>
+        </div><!--/company-image-->
+          <span><%= idea.title %></span>
+      </div><!--/company-name-->
+      <ul class="bottom-li">
+        <% if idea.is_owner?(current_user) || idea.member?(current_user)%>
+        <li><%= link_to "Dashboard", edit_tour_path(:idea_id => idea.id), :class => "#{current_page(edit_tour_path(:idea_id => idea.id))}"%></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle <%= current_page(idea)%> <%= current_page(edit_idea_path(idea))%>" data-toggle="dropdown">
+            Idea Profile</a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "View Profile", idea %></li>
+            <% if idea.is_owner?(current_user)%>
+              <li class="divider"></li>
+              <li><%= link_to "Edit Idea", edit_idea_path(idea)+"#idea"%></li>
+              <li><%= link_to "Edit Team", edit_idea_path(idea)+"#team"%></li>
+            <% end %>
+          </ul>
+        </li>
+        <% end %>
+      </ul>
+    </div><!--/row-fluid-->
+  </div><!--/container-->
+</div><!-- /bottom-nav-->
+</div><!-- /sub-navbar-->
+
+<script type="text/javascript">
+  var toggle = '[data-toggle=dropdown]'
+    , Dropdown = function (element) {
+        var $el = $(element).on('mOver.dropdown.data-api', this.toggle)
+        $('html').on('mOver.dropdown.data-api', function () {
+          $el.parent().removeClass('open')
+        })
+      }
+</script>

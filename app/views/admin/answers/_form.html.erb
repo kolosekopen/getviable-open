@@ -1,0 +1,4 @@
+<%= simple_nested_form_for [:admin, @question, @answer] do |f| -%>
+  <%= render "admin/answers/fields", :f => f %>
+  <%= f.submit %>
+<% end -%>

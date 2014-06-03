@@ -1,0 +1,46 @@
+<% title "GetViable - Sign In" %>
+
+<div class="mid-background">
+  <div class="container">
+    <div class="row-fluid">
+    <div class="well well-large">
+      <h1>Login</h1>
+      <div class="row-fluid"><!-- input form row-->
+      <% if Setting.social_login == 'false' %>
+      <div class="login-form">
+      	<% form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => "form-horizontal btn-center") do |f| %>         
+            <%= f.text_field :email, :placeholder => "Email" %> 
+            <%= f.password_field :password, :placeholder => "Password" %>
+            <%= f.submit "Login", :class =>"btn btn-success" %>
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+    				  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+    				<% end -%>
+        <% end %>
+      </div><!--/login-form-->
+      </div><!-- /row-fluid-->
+      <% else %>
+
+      <div class="row-fluid social-row">
+        <ul>
+      	<%- if devise_mapping.omniauthable? %>
+		  <%- resource_class.omniauth_providers.each do |provider| %>
+		    <li>
+		    	<%= link_to "<i class=\"#{provider.to_s} social-btn\"></i>Sign in with #{provider.to_s.titleize}".html_safe, omniauth_authorize_path(resource_name, provider), :class => "btn" %>
+	        </li>
+		    
+		  <% end -%>
+		<% end -%>
+        </ul>
+      </div--><!-- /row-fluid-->
+      <% end %>
+
+      <!--p>
+        <%#- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  Need an account? <%#= link_to "Sign up", new_registration_path(resource_name) %><br />
+		<%# end -%>
+      </p-->
+
+    </div><!--/well-->
+    </div><!-- /row-fluid-->         
+  </div><!-- /container-->
+</div><!--/mid-background-->

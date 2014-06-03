@@ -1,0 +1,12 @@
+development:
+  access_key_id: AKIP#EXAMPLE#C4OFFV
+  secret_access_key: e+kkjyY0piFZu#EXAMPLE#Q/j/YMMyZArqMlOaOD
+  bucket: getviable-development
+test:
+  access_key_id: AKIP#EXAMPLE#C4OFFV
+  secret_access_key: e+kkjyY0piFZu#EXAMPLE#Q/j/YMMyZArqMlOaOD
+  bucket: getviable-test
+production:
+  access_key_id: AKIP#EXAMPLE#C4OFFV
+  secret_access_key: e+kkjyY0piFZu#EXAMPLE#Q/j/YMMyZArqMlOaOD
+  bucket: getviable-production

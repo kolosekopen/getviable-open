@@ -1,0 +1,12 @@
+Hi, 
+  User #<%= @expert_request.user_id%> asked for expert with:
+
+Type of problem: <%= ExpertRequest::SERVICES[@expert_request.support_type]%>
+Subject: <%= @expert_request.subject %>
+Problem: <%= @expert_request.problem %>
+Idea: #<%= @expert_request.idea_id %>
+
+    Hope you can help him out. 
+
+
+  Regards, GetViable Team

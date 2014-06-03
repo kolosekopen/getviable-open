@@ -1,0 +1,47 @@
+$(document).ready(function() {
+  $("select.condition_question_select").change(function(e){
+    fetch_answers(e.target);
+  });
+});
+
+var fetch_answers = function(target){
+  var q_id = $(target).val();
+  answer_list = $(target).parent().parent().find(".question_dependency_dependency_conditions_answer select")[0];
+  if(q_id){
+    $.ajax({
+      url: "/admin/fetch_answers?question_id="+q_id,
+      dataType: "json"
+    }).done(function ( data ) {
+      $(answer_list).find("option").remove();
+      for (i in data)
+      {
+        $(answer_list).append("<option value='"+data[i].id+"'>"+data[i].title+"</option>");
+      }
+    });
+  }else{
+    $(answer_list).find("option").remove();
+    $(answer_list).append("<option value=''></option>");
+  }
+};
+
+(function($) {
+  $(document).on('nested:fieldAdded:dependency', function(event){
+    $("a[data-association=dependency]").toggle();
+  });
+  $(document).on('nested:fieldRemoved', function(event){
+    field = event.field;
+    if(field.find('div.question_dependency_rule').length > 0){
+      $("a[data-association=dependency]").toggle();
+    }
+  });
+  $(document).on('nested:fieldAdded', function(event){
+    field = event.field;
+    if(field.find('div.question_dependency_dependency_conditions_rule_key').length > 0){
+      $("select.condition_question_select").off("change");
+      $("select.condition_question_select").change(function(e){
+        fetch_answers(e.target);
+      });
+    }
+  });
+
+})( jQuery );

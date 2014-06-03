@@ -1,0 +1,25 @@
+<h4>Ideas</h4>
+
+<table class="sortable table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th><%= "# Id" %></th>
+      <th><%= glyph(:tasks, :white)+"Title" %></th>
+      <th><%= "Featured" %></th>
+      <th><i class="icon-pencil icon-white"></i>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr class="idea">
+        <!-- TODO: Don't show link_to action if nothing to edit beneath -->
+        <td class="bold"><%= idea.id %></td>
+        <td><%= idea.title %></td>
+        <td><%= idea.featured? %></td>
+        <td class="grey">
+          <%= link_to 'Feature', admin_idea_feature_path(idea.id), :class => "btn" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

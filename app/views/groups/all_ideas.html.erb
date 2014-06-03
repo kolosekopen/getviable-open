@@ -1,0 +1,19 @@
+<!-- 3.1.0 EXplore Ideas
+	==================== -->
+
+<div class="row-fluid box-row-title">
+	<h1>Explore Ideas<span class="text-grey"> &gt; All Ideas</span></h1>   
+	 
+</div>
+
+<div id="logged" class="group-box mini-layout-body  m-20-bott">
+<div class="row-fluid logged-bg">
+  
+  <% @ideas.each do |idea|%>
+    <%= render "/ideas/idea_box", :idea => idea%>
+  <% end %>
+
+
+</div><!--/shadow-box-->
+<a href="" class="pull-right font12">Next page &raquo;</a>
+</div><!--/mini-layout-body-->

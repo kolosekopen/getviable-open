@@ -1,0 +1,7 @@
+<%= form_tag admin_create_invitations_path, :method => :post do %>
+Enter list of emails here, separated by semicolons(;)
+
+<%= text_area_tag "emails", "", :style => "width: 250px; height: 400px;" %>
+
+<%= submit_tag "Send invitations" %>
+<% end %>

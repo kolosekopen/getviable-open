@@ -1,0 +1,122 @@
+<!-- _________________________ Shadow box (slider and buttons)_______________________ -->
+<div class="shadow-box slider-h box-style white-bg unselect">
+
+<div class="row-fluid" >
+
+<div class="slider-btn-box" >
+  <div class="done-stage pull-left">
+    <ul>
+      <% @stages_before.each do |stage| %>
+      <li>
+        <% if stage.icon_file_name.nil?%>
+          <%= link_to raw("<i class=\"iconv-new#{stage.image}\" ></i>"), edit_tour_path(:idea_id => @idea.id, :section => stage.survey_sections.where("survey_id = ?", @survey.id).first), :class => "btn-stage pull-left", :style=>"background-color:#{stage.color || "f5b213"};" %>
+        <% else %>
+          <%= link_to raw(image_tag stage.icon.url(:medium)), edit_tour_path(:idea_id => @idea.id, :section => stage.survey_sections.where("survey_id = ?", @survey.id).first), :class => "btn-stage pull-left", :style=>"background-color:#{stage.color || "f5b213"};" %>
+        <% end %>
+      </li>
+      <% end unless @stages_before.nil? %>
+    </ul>
+  </div><!-- /done-stage-->
+  
+
+  <div class="curent-stage pull-left">
+    <a href="" class="pull-left btn-stage" rel="tooltip" data-placement="top" data-original-title="<%= stage.title%>" style="background-color:<%= stage.color || 'f5b213'%>">
+      <% if stage.icon_file_name.nil?%>
+        <i class="<%="iconv-new#{stage.image}"%>" ></i>
+      <% else %>
+        <%= image_tag stage.icon.url(:medium) %>
+      <% end %>
+    </a>
+    <div class="pull-left">
+      <!--every stage has its class color, for example .idea-stage, design-stage...-->
+      <p class="#{stage.image}-stage bold"><%= stage.title%></p>
+    </div>
+
+  </div><!-- /curent-stage-->
+
+  <div class="to-do-stage pull-right">
+    <ul>
+      <% @stages_after.each do |stage|%>
+        <li>
+          <% if stage.icon_file_name.nil?%>
+            <%= link_to raw("<i class=\"iconv-new#{stage.image}\" ></i>"), edit_tour_path(:idea_id => @idea.id, :section => stage.survey_sections.where("survey_id = ?", @survey.id).first), :class => "btn-stage pull-left", :style=>"background-color:#{stage.color || 'f5b213'};", :rel=>"tooltip", :data => {'placement' => 'right', 'original-title' => "#{stage.title}"} %>
+          <% else %>
+            <%= link_to raw(image_tag stage.icon.url(:medium)), edit_tour_path(:idea_id => @idea.id, :section => stage.survey_sections.where("survey_id = ?", @survey.id).first), :class => "btn-stage pull-left", :style=>"background-color:#{stage.color || 'f5b213'};", :rel=>"tooltip", :data => {'placement' => 'right', 'original-title' => "#{stage.title}"} %>
+          <% end %>
+        </li>
+      <% end unless @stages_after.nil?%>
+      <!--li><a href="" class="btn btn-design">
+        <i class="iconv-design" ></i>
+      </a></li>
+      <li><a href="" class="btn btn-engage">
+        <i class="iconv-engage" ></i>
+      </a></li>
+      <li><a href="" class="btn btn-build">
+        <i class="iconv-build"></i>
+      </a></li-->
+    </ul>
+  </div><!-- /to-do-stage-->
+</div><!-- /slider-btn-box-->
+</div><!-- /row-fluid-->
+
+<div id="wrapper">
+<ul id="flip">
+<!-- TODO: REFACTOR this code, it's soo ugly -->
+
+<% position = 0 %>
+<% stage_color = stage.color %>
+<% stage.survey_sections.where("survey_id = ?", @survey.id).each_with_index do |section, index| %>
+<% edit_section = edit_tour_path(:idea_id => @idea.id, :section => section) %>
+<li class="<%= "active" if section == current_section %>">
+    <% completed = section.completed?(@idea.id).to_s %>
+    <%= link_to("<div class=\"bar\" style=\"color:#{stage_color};\">                
+        <div class=\"value\" style=\"background:#{stage_color};height: #{completed}%;\">
+          <span style=\"display: inline;\">#{completed}%</span>
+       </div>                
+       </div><span class=\"title\">#{section.title}</span>".html_safe, edit_section) %>
+
+<% position = index if section == current_section %>
+
+</li>
+
+<% end %>
+
+</ul>
+
+<nav>
+  <span class="prev"></span>
+  <span class="next"></span>
+</nav>
+</div>
+
+
+
+
+</div><!--/shadow box-->
+
+<script>
+$('#flip').jcoverflip({
+  current: <%= position %>
+});
+</script>
+
+<script>
+  $(".next").click(function() {
+    $("#flip").jcoverflip("next");
+  });
+</script>
+
+<script>
+  $(".prev").click(function() {
+      $("#flip").jcoverflip("previous");
+  });
+</script>
+
+     <!--script for tooltip question mark-->
+     <script type="text/javascript">
+        $(document).ready(function(){
+            if($("[rel=tooltip]").length){
+                $("[rel=tooltip]").tooltip();
+            }
+        });
+     </script>

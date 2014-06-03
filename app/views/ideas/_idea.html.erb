@@ -1,0 +1,180 @@
+<% idea ||= @idea %>
+      <div class="shadow-box box-margin-bottom">
+        <div class="row-fluid">
+          <!-- ============== text-box =============== -->
+          <div class="span5 block-box">
+            <div class="text-box">
+            <div class="row-fluid">
+              <div class="pic">
+                <%= image_tag idea.photo.url(:small) %>
+              </div><!--/pic-->
+              <div class="header-text-box">
+                <h1><%= idea.title %></h1><br>
+           		  <% # disabling payment for now... %>
+                <% if idea.is_owner?(current_user) && Setting.payments_enabled == 'true' %>
+			          <% if !idea.package.platinum? %>
+                  <a href="<%= edit_idea_path(idea) %>" class="btn-flat btn-small btn-flat-small <%= package_button_css_class(idea.package) %>">
+                    <span><%= idea.package.name %></span>
+                  </a><!-- may to add btn-silver, btn-gold, btn-platinum class-->
+                <% else %>
+                  <a href="<%= edit_idea_path(idea) %>" class="btn-flat btn-small btn-flat-small btn-platinum">
+                    <span><%= idea.package.name %></span>
+                  </a><!-- may to add btn-silver, btn-gold, btn-platinum class-->
+                <% end %>
+                <% end %>
+                <% if idea.group %>
+                  <a href="#"><span class="label label-info"><%= idea.group.title %></span></a>
+                <% end %>
+              </div>
+              </div><!--row-fluid-->
+              
+              <div class="row-fluid description-row">
+                <h5><%= idea.industry.try(:title) %></h5>
+                <% description = breaking_word_wrap(idea.description,45) %>
+                <p><%= description %></p>
+              </div>
+
+              <% idea_name = idea.title %>
+              <% idea_url = request.protocol + request.host + "/ideas/" + idea.title %>
+
+              <div class="row-fluid text-buttons">
+              <div class="row-fluid left-bottom">
+              <% if !current_page(profile_path(current_user))%>
+                <% if idea.is_owner?(current_user) && current_page(ideas_path) %>
+                  <%= link_to "Work on Startup",  edit_tour_path(:idea_id => idea.id), :class => "btn btn-success btn-small" if idea.is_owner? current_user%>
+                <% end %>
+                <%= link_to "Public Profile", idea, :class => "btn btn-small" unless current_page?(idea_path(idea))%>
+              <% else %>
+                <%= link_to "View profile",  idea_path(idea), :class => "btn btn-small btn-success" if idea.is_owner? current_user%>
+              <% end %>
+              </div><!--/left-bottom-->
+
+<div class="row-fluid  follow-row">
+  <ul>
+    <% if !idea.twitter.nil?%>
+    <li><a href="https://twitter.com/<%= idea.twitter %>" class="twitter-follow-button" data-show-count="false">Follow @<%= idea.twitter %></a></li>
+    <% end %>
+
+    <% if !idea.facebook.nil?%>
+    <li><div class="fb-follow" data-href="https://www.facebook.com/<%= idea.facebook %>" data-layout="button_count" data-show-faces="true" data-width="100"></div></li>
+    <% end %>
+   
+    <li>
+
+      <div class="vote-btn">
+        &nbsp;Vote:&nbsp;
+      <% current_idea = idea || @idea%>
+      <%= link_to raw_glyph(:thumbs_up, :white), vote_idea_path(:id => current_idea.slug), :remote => true, :method => :put, :class=>"btn btn-small btn-info"%>
+          
+
+      <span class="vote-num"><%= current_idea.votes_for %></span></div></li>
+  </ul>
+
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+              <!--span class='st_facebook_hcount' displayText='Facebook' st_url="[INSERT PUBLIC IDEA URL]" st_title="GetViable Innovation Software" st_summary="Another great idea, <%= idea_name%> getting viable! #startups #innovate "></span-->
+<!--span class='st_twitter_hcount' displayText='Tweet' st_url="<%= idea_url %>" st_title="GetViable Innovation Software" st_summary="Another great idea, <%= idea_name %> getting viable! #startups #innovate "></span-->
+<!--span class='st_linkedin_hcount' displayText='LinkedIn' st_url="<%= idea_url %>" st_title="GetViable Innovation Software" st_summary="Another great idea, <%= idea_name %> getting viable! #startups #innovate "</span-->
+<!--span class='st_googleplus_hcount' displayText='Google +' st_url="<%= idea_url %>" st_title="GetViable Innovation Software" st_summary="Another great idea, <%= idea_name %> getting viable! #startups #innovate ">
+</span--> 
+</div><!--row-fluid-->
+</div><!--row-fluid (text-buttons)-->
+
+              
+            </div><!-- /text-box-->
+
+
+            
+          </div><!-- /span-->
+
+
+          <!-- ============== team-box =============== -->
+          <div class="span3 block-box">
+            <div class="team-box">
+              <h5 class=""><i class="ico-three-men">&nbsp;</i>The Team
+
+              <%#= link_to "Add", edit_idea_path(idea), :class => "btn btn-small pull-right"%></h5>
+
+              <div class="team-block">
+                <ul>
+                  <% idea.users.each do |user|%>
+                    <li>
+                      <%= image_tag user.image? %>
+                      <%= link_to user.name || user.email, profile_path(user) %>
+                    </li>                    
+                  <% end %>
+                </ul>
+              </div><!-- /team-block-->      
+
+              <%#= link_to "Add team", edit_idea_path(idea), :class => "btn btn-info btn-small btn-add-team m-18-bott"%>
+              <%= link_to "Add team", new_idea_invitation_path(idea || @idea), {:remote => true, 'data-toggle' => 'modal', 'data-target' => "#addTeam", 'data-backdrop' => true, 'data-keyboard' => true, :class => "btn btn-info btn-small btn-add-team m-18-bott"} %>
+
+                <!-- Modal -->
+                <div id="addTeam" class="modal-new-idea modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+                            
+            </div><!-- /team-box-->
+          </div><!-- /span-->
+
+          <!-- ============== progress-box =============== -->
+          <div class="span4 block-box">
+            <div class="progress-box">
+    
+              <div class="row-fluid"><!-- progress row-->
+                <div class="p-box progress-shadow progress-color">
+                  <h5><i class="icon-signal"></i> Progress</h5>
+                  <!-- TODO: Ugly code, please refactor -->
+                  
+                  <!-- CSS NOTE: .progress-color .progress .bar{ background-image:none;} -ENABLES inline background color. If you want default stage color, delete class="progress-color" from this code. -->
+
+                  <% Stage.order("stages.order ASC").each do |stage| %>
+                    <% completed = stage.completed?(idea)%>
+                    <div class="progress progress-success" style="">
+                      <div class="bar" style="width: <%= completed %>%; background-color: <%= stage.color || '#C0DA66'%>;"></div>
+                      <div class="progress-text">
+                        <div class="progress-left">
+                          <p><%= stage.title %></p></div>
+                        <div class="progress-right">
+                          <p><%= completed == 0 ? "Not Started" : "#{completed}%" %></p></div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div><!--/p-box-->
+              </div><!--/row-fluid-->
+            </div><!-- /progress-box-->
+          </div><!-- /span-->
+
+        </div><!-- /row-fluid-->
+      </div><!-- /shadow-box-->
+
+
+
+            <!-- Modal EDIT IDEA
+      ============================-->
+
+<div class="modal-new-idea modal hide fade" id="modal-window">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="myModalLabel">EDIT IDEA</h3>
+  </div>
+  <div id="myModalIdea">
+    <div class="modal-body center">
+      
+    </div>
+    <div class="modal-footer">&nbsp;</div>
+  </div>
+</div>

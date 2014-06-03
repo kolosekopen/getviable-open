@@ -1,0 +1,54 @@
+<% title "GetViable - Sign Up" %>
+
+<!-- ______________________________ /and Navigation Bar ______________________________ -->
+<div class="mid-background">
+  <div class="container">
+    <!--div class="row-fluid">
+    <div class="well well-large">
+      <h1>Sign up</h1>
+      
+      <h4 class="center normal"><span class="bold green">It's free to join!</span><br>
+        We will not post anything to your network without your permission.</h4>
+
+      <div class="row-fluid social-row">
+        <ul>
+        <%#- if devise_mapping.omniauthable? %>
+      <%#- resource_class.omniauth_providers.each do |provider| %>
+        <%# unless provider == :twitter %>
+        <li>
+          <%#= link_to "<i class=\"#{provider.to_s} social-btn\"></i>Sign in with #{provider.to_s.titleize}".html_safe, omniauth_authorize_path(resource_name, provider), :class => "btn" %>
+          </li>
+        <%# end %>
+        
+      <%# end -%>
+    <%# end -%>
+        </ul>
+      </div--><!-- /row-fluid-->
+
+      <p class="bold">Start working on your ideas today!</p>
+      <div class="row-fluid"><!-- input form row-->
+
+      <div class="login-form">
+                <h4>Signup without a social network</h4>
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class =>"form-horizontal btn-center") do |f| %>
+                <%= f.hidden_field :registration_invitation_id, :value => @reg_invite.id %>
+                <%= f.email_field :email, :placeholder=>"Email" %>
+                <%#= f.text_field :name, :placeholder=>"Name" %>
+                <%= f.password_field :password, :placeholder=>"Password" %>
+                <%= f.password_field :password_confirmation, :placeholder=>"Password confirmation" %>
+                <%= f.submit "Sign up", :class => "btn btn-success" %>
+        <% end %>
+      </div><!--/login-form-->
+      </div><!-- /row-fluid-->
+      <p>
+      	<%- if controller_name != 'sessions' %>
+	Already have an account? <%= link_to "Sign in", new_session_path(resource_name) %><br />
+		<% end -%>
+      </p>
+
+    </div><!--/well-->
+    </div><!-- /row-fluid-->         
+  </div><!-- /container-->
+</div><!--/mid-background-->
+
+<div id="push"></div><!-- Important to add for sticky footer-->

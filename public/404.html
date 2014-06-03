@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <style type="text/css">
+    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; padding-top: 42px; }
+    div.dialog {
+      width: 570px;
+      padding: 0 4em;
+      margin: 2.5em auto 0 auto;
+    }
+    h1 { font-size: 1.8em; color: #1A1A1A; line-height: 1.3em; font-weight: normal;}
+    
+    p{ text-align: left; }
+    .p{
+      color: #666;
+      font-weight: normal;
+      font-size: 0.5em;
+    }
+    h1 a{
+      text-decoration: none;
+    }
+    h1 a:hover{
+      text-decoration: underline;
+    }
+    .container{
+      display: inline-block;
+      width: 100%;
+    }
+    .dialog img{
+      width: 100%;
+    }
+    .green {
+      color: #51A351;
+      }
+      /***** Navigation bar****/
+      .navbar-fixed-top {
+        position: fixed;
+        margin: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        -moz-box-shadow: 0 0 10px #303030;
+        -webkit-box-shadow: 0 0 10px #303030;
+        -o-box-shadow: 0 0 10px #303030;
+        box-shadow: 0 0 10px #303030;
+        }
+        .navbar-inner {
+          background: url('/images/main-top-bar.png') repeat-x;
+          border-bottom: 2px 666 solid;
+          max-height: 43px;
+          }
+          .navbar-container{
+            display: inline-block;
+            width: 970px;
+            margin: 0 auto;
+          }
+          body .navbar-container{
+            text-align: left;
+          }
+          .navbar-inner img{
+            text-align: left;
+            margin-top: 2px;
+          }
+    /* Large desktop */
+@media (min-width: 1200px) { div .dialog{width: 570px;} }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { div .dialog{width: 530px;}  }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { div .dialog{width: 490px;padding:0;}  }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { div .dialog{width: 300px; padding:0;}  }
+  </style>
+</head>
+
+<body>
+  <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+      <div class="navbar-container">
+        <%= link_to image_tag("/images/getviable.png"), root_path %>
+        
+      </div>
+      </div>
+    </div>
+
+  <!-- This file lives in public/404.html -->
+  <div class="container">
+  <div class="dialog">
+    
+    
+    <img src="/images/Insanely_Great.png">
+    <h1>We can't find the page you're looking for.
+      <br> 
+      <strong><%= link_to "Click here", root_path, :class=> "green" %></strong>
+      <br>
+      to go back to GetViable home.</h1>
+  </div>
+  </div>
+</body>
+</html>

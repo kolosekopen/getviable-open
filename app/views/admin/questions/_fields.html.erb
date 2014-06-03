@@ -1,0 +1,6 @@
+<%= f.input :text, :label => "Question text", input_html: { :style => "width: 500px; height: 60px" } %>
+<%= f.input :display_order, :label => "Display order - in what order should this question be shown" ,input_html: { :style => "width: 50px;"} %>
+<%= f.input :reference_identifier, :label => "Question reference identifier", input_html: { :style => "width: 500px; height: 60px" } %>
+<%= f.input :display_type, :label => "Display type" , :collection => {"Display question text with answers" => "default", "Show only question text" => "label" }, :include_blank => false, input_html: { :style => "width: 270px;" }  %>
+<%= f.input :pick, :label => "How many answers need to be selected", :collection => {"None" => "none", "One" => "one", "Any" => "any" }, :include_blank => false, input_html: { :style => "width: 100px;" }  %>
+<%= f.association :question_group, :label => "Add question to Question group<br/>(for repeating questions; needs to be created beforehand)", input_html: { :style => "width: 200px;" }  %>

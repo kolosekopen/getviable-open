@@ -1,0 +1,108 @@
+
+        <%= render "layouts/dashboard/second_navigation", :idea => @idea %>
+
+        <!-- _________________________ Shadow box (slider and buttons)_______________________ -->
+        <div class="shadow-box box-style">
+
+          <%= render "layouts/dashboard/slider" %>
+
+        </div><!--/shadow box-->
+
+<div id="dashboard" class="shadow-box"> <!-- Step questions -->
+
+<!-- ============== Introduction ============= -->
+  <div class="row-fluid introduction-box">
+    <div class="fav-star">
+      <div class="pull-right">
+        <div class="iconstar pull-right">
+        <!-- star has stages see jelena.css row 143 --> 
+        <i class="iconstar-grey"></i>       
+        </div>    
+      </div><!--/ pull right-->
+    </div><!-- /fav-star-->
+
+    <div class="span3"> 
+      <div class="task-video">
+                <a class="youtube the_task_vid" href="#" rel="/1y7mgB5fCRA" title=""><img alt="Video-play" src="/images/video-play.png" /></a>
+        </div><!-- /task-video -->      
+    </div><!-- /span3-->
+
+    <div class="span8">
+    <div class="pull-left intro-box">
+      <h1><%= @step.title %></h1>
+      <p class="intro"><%= @step.description %></p>
+    </div><!-- /pull-left-->    
+    </div><!-- /span-->
+
+    
+    
+  </div><!-- and row-fluid introduction-box-->
+  <!-- ============== and Introduction ============= -->
+
+  <!-- ============== Forms ============= -->
+  <div id="form-row">
+    <div  class="row-fluid"><!-- row-fluid (form-box)-->
+      <div class="span9 offset2">
+          
+      <%= form_tag step_path, :method => :put,  :class => "form-horizontal" do %>
+          <%= hidden_field_tag 'idea_id', @idea.id %>
+          <!-- ============== Input field ============= -->
+          <div class="row-fluid">
+          <div class="span9 offset2 form-row">
+            <div class="form-inline">                     
+              <% @step.questions.each do |question|%>
+                <% response = Response.find_by_question_id_and_idea_id(question.id, @idea.id)%>
+                <div class="form-box">
+                  <%= label_tag "question-#{question.id}" , question.content, :class => "pull-left" %>
+                  <% if !response.nil?%>
+                    <%= text_field_tag "answers[#{question.id}][]", response.answer,  :class =>"pull-left" %>
+                  <%else%>
+                    <%= text_field_tag "answers[#{question.id}][]", nil,  :class =>"pull-left" %>
+                  <%end%>
+                  <a class="" href=""><i class="iconv-nques"></i></a>
+                </div><!-- /form-box-->
+              <% end %>
+            </div><!-- /form-inline-->
+          </div><!-- /span7 -->
+          </div><!-- /row-fluid --> 
+          <!-- ============== and Input field ============= -->
+
+          <%#= render "table" %>
+
+          <%#= render "message" %>
+
+
+          <!-- ============== Buttons ============= -->
+          <div id="button-row">
+          <div class="row-fluid">
+            <div class="button-row">
+              <div class="span6">
+                <div class="pull-left">
+                  <p>Autosaved 10 seconds ago - <a href="">discard</a> </p>
+                </div>
+              </div>
+              <div class="span6">
+                <div class="pull-right">
+                  <a href="" class="btn btn-info btn-friend">
+                    <span>Ask friend</span>
+                    <i class="iconv-design"></i></a>
+                  <a href="" class="btn btn-success btn-save">
+                    <span>Save</span>
+                    <i class="icon-ok-sign icon-white"></i>
+                  </a>
+                  <%= submit_tag "Next", :class => "btn btn-warning btn-save" %>
+                </div>
+              </div>
+
+            </div><!-- /(class) button-row -->
+          </div><!-- /row-fluid -->
+          </div><!-- /and (id) button-row -->
+          <!-- ============== and Buttons ============= -->
+
+        <% end %>    
+      </div><!-- /span9 -->
+    </div><!-- /(id) form-row --> 
+  </div><!-- /row-fluid (form-box)-->
+  <!-- ============== and Forms ============= -->
+
+</div><!-- / Shadow box-->

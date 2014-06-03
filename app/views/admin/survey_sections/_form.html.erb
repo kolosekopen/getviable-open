@@ -1,0 +1,9 @@
+<%= simple_nested_form_for [:admin, @survey, @survey_section] do |f| %>
+  <%= render "admin/survey_sections/fields", :f => f %>
+  <hr />
+  <h5>Questions</h5>
+  <%= f.fields_for :questions %>
+  <p><%= f.link_to_add "Add a question", :questions %></p>
+  <hr />
+  <%= f.submit %>
+<% end %>

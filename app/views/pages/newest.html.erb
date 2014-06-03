@@ -1,0 +1,26 @@
+<% title "GetViable - Newest" %>
+
+<div id="logged" class="mid-background">
+
+  <div  class="container">
+
+
+    <!-- _____________________________ Logged in section __________________________ -->
+  <div class="row-fluid logged-bg"> 
+    <div class="row-fluid box-row-title">
+      <h1>Newest Startups</h1>
+      <%#= link_to "All Newest &raquo;".html_safe, newest_path %>
+    </div><!-- /row-fluid--> 
+
+    <!-- _____________________________ Featured -row __________________________ -->
+    <div class="row-fluid"> 
+
+      <% @newest.each do |idea|%>
+        <%= render "ideas/idea_box", :idea => idea %>
+      <% end unless @newest.empty? %>
+
+    </div><!-- /row-fluid -->
+  </div>
+
+  </div><!--/container-->
+</div><!-- /mid-background-->

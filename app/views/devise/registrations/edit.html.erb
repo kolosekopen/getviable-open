@@ -1,0 +1,123 @@
+<% title "GetViable - Settings" %>
+
+<div class="mid-background">
+  <div class="container">
+    <div class="row-fluid user-intro">
+      <%= link_to current_user.name, profile_path(current_user) %>
+      <p>&gt; Settings</p>
+    </div><!--/user-intro-->
+
+    <div class="row-fluid box-row-title">
+      <!--h1>Settings</h1-->
+    </div><!-- /row-fluid-->
+
+
+
+    <!-- _____________________________ Your profile -row __________________________ -->
+    <div class="row-fluid logged-bg">
+      <div class="row-fluid box-row-title">
+        <h3>Profile Settings</h3>
+
+      </div><!-- /row-fluid-->
+
+      <div class="row-fluid user-padd">
+        <!-- ============ Form =================== -->
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }, :class => "form-horizontal") do |f| %>
+        <%= devise_error_messages! %>
+        <div class="form-inline">
+
+          <div class="form-box form-sett">
+            <%= f.label :email, :class => "span2" %>
+            <span class="pull-left red">*</span>
+            <div class="span7">
+              <%= f.fields_for :custom_email do |ce| %>
+                <%= ce.email_field :custom_email, :class => "pull-left" %>
+              <% end %>
+              <em>We will not share this without your permission</em>
+            </div>
+          </div><!-- /form-box-->
+
+
+          <div class="form-box form-sett">
+            <label class="span2">About</label>
+            <div class="span7">
+              <%= f.text_area :description%>
+            </div>
+          </div><!-- /form-box-->
+          
+          <div class="form-box form-sett">
+            <label class="span2">Location</label>
+            <div class="span7">
+              <%= f.text_field :location%>
+            </div>
+          </div><!-- /form-box-->
+
+          <!--div class="fileupload fileupload-new" data-provides="fileupload">
+          <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;"><img src="http://www.placehold.it/50x50/EFEFEF/AAAAAA" /></div>
+          <div class="fileupload-preview fileupload-exists thumbnail" style="width: 50px; height: 50px;"></div>
+          <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+          <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+          </div-->
+
+          <div class="form-box form-sett">
+            <label class="span2">Personal Website</label>
+            <div class="span7">
+              <%= f.text_field :website%>
+            </div>
+          </div><!-- /form-box-->
+
+          <div class="form-box form-sett">
+            <label class="span2">Personal Blog</label>
+            <div class="span7">
+              <%= f.text_field :blog%>
+            </div>
+          </div><!-- /form-box-->
+
+          <div class="form-box form-sett">
+            <label class="span2">Email Notification Settings</label>
+
+            <div class="span7">
+              <div>
+                <label class="span6">Notify me of important updates to GetViable</label>
+                <%= f.check_box :updates_notifications %>
+              </div>
+              <br />
+              <div>
+                <label class="span6">Notify me of comments on my idea activity</label>
+                <%= f.check_box :comments_notifications %>
+              </div>
+            </div>
+          </div><!-- /form-box-->
+
+          <div class="offset2">
+            <%= f.submit "Update", :class =>"btn btn-info" %>
+          </div><!--/ offset2-->
+
+        </div><!-- /form-inline -->
+        <% end %>
+      </div><!-- /row-fluid -->
+    </div><!-- /row-fluid logged-bg -->
+
+
+  </div><!--/container-->
+</div><!--/mid-background-->
+
+
+<% unless current_user.ideas.empty? %>
+<!--div class="row-fluid">
+<div id="your-idea" class="row-fluid">
+  <div class="pull-left">
+    <p>Ideas</p>
+  </div>
+
+  <div class="pull-right">
+    <a  href="#myModalIdea" role="button" data-toggle="modal" data-remote="true" class ="btn btn-success pull-right"><i class="icon-plus-sign icon-white"></i>Add an Idea</a>
+  </div>
+</div>
+
+<%#= render :partial => "/ideas/idea", :collection => current_user.ideas.only_ideas %>
+
+<%#= render :partial => "/ideas/idea", :collection => current_user.ideas.startups %>
+
+</div--><!-- /row-fluid-->
+<% end %>

@@ -1,0 +1,28 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <%= link_to image_tag('getviable-admin.png'), admin_path, :class => "brand" %>
+
+
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          <li><%= link_to("Settings", admin_settings_path) %></li>
+          <li><%= link_to("Ideas", admin_ideas_path) %></li>
+          <li><%= link_to("Stages", admin_stages_path) %></li>
+          <li><%= link_to("Invite Users", admin_new_invitations_path) %></li>
+          <li><%= link_to("Surveys", admin_surveys_path) %></li>
+          <li><%= link_to("Question Groups", admin_question_groups_path) %></li>
+          <li class="exit-btn"><%= link_to("Exit →", root_path, :class => "btn dark-green-btn") %></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>

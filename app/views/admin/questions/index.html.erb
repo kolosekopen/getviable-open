@@ -1,0 +1,31 @@
+<% if @survey_section %>
+  <h3><%= link_to "<-", admin_survey_survey_sections_path(@survey_section.survey) %> Survey Section: <%= @survey_section.title%></h3>
+  <%= @survey_section.description %>
+<% end %>
+
+<h4>Questions</h4>
+
+<%= link_to "New question", new_admin_survey_section_question_path(@survey_section), :class => "btn" if @survey_section %>
+
+<table class="sortable table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th><%= "# Id" %></th>
+      <th><%= glyph(:tasks, :white)+"Text" %></th>
+      <th><i class="icon-pencil icon-white"></i>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr class="question">
+        <!-- TODO: Don't show link_to action if nothing to edit beneath -->
+        <td class="bold"><%= link_to(question.id, admin_question_answers_path(question)) %></td>
+        <td><%= link_to(question.text, admin_question_answers_path(question)) %></td>
+        <td class="grey">
+          <%= link_to 'Edit', edit_admin_question_path(question), :class => "btn" %>
+          <%= link_to 'Delete', admin_question_path(question), :class => "btn", :method => :delete, :confirm => "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

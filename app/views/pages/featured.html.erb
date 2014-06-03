@@ -1,0 +1,26 @@
+<% title "GetViable - Featured" %>
+
+<div id="logged" class="mid-background">
+
+  <div  class="container">
+
+    <!-- _____________________________ Logged in section __________________________ -->
+  <div class="row-fluid logged-bg"> 
+    <div class="row-fluid box-row-title">
+      <h1>Featured</h1>
+      <p>Picked by GetViable Team</p>
+      <%#= link_to "All Featured &raquo;".html_safe, ideas_path %>
+    </div><!-- /row-fluid--> 
+
+    <!-- _____________________________ Featured -row __________________________ -->
+    <div class="row-fluid"> 
+
+      <% @featured.each do |idea|%>
+        <%= render "ideas/idea_box", :idea => idea %>
+      <% end unless @featured.empty? %>
+
+    </div><!-- /row-fluid -->
+  </div>
+
+  </div><!--/container-->
+</div><!-- /mid-background-->

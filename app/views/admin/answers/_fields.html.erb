@@ -1,0 +1,4 @@
+<%= f.input :text, :label => "Answer label(may be displayed next to answer, serves as text for fixed text answers)", input_html: { :style => "width: 500px; height: 60px" } %>
+<%= f.input :display_order, input_html: { :style => "width: 50px;" }  %>
+<%= f.input :display_type, :collection => {"Default" => "default", "Hidden label" => "hidden_label" }, :include_blank => false, input_html: { :style => "width: 130px;" }  %>
+<%= f.input :response_class, :collection => {"Freeform text" => "string", "Fixed text" => "answer" }, :include_blank => false, input_html: { :style => "width: 100px;" }  %>

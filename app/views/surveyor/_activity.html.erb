@@ -1,0 +1,61 @@
+
+
+<!-- ============ Activity Block ============= -->
+<div class="row-fluid">
+	<div class="forum-block">
+		<% acitivies.each_with_index do |activities_history, index|%>
+		<% activities_history = activities_history.second %>
+		<% activity = activities_history.first %>
+		<% activities_history.reject!{|a| a == activity} %>
+		<script>
+		toggle_visibility = function (id){
+    event.preventDefault();
+
+   var e = $("#"+id);
+   e.toggle();
+   return false;
+}
+		</script>
+		<div class="shadow-box">
+
+	          <!-- STAGE ROW 
+	          ======================-->
+	          <div class="stage-row">
+	          	<%= render "/surveyor/activity_forum_header", :idea => idea, :activity => activity %>
+	          	
+	         <div class="forum-body">
+                <% if !current_page?(idea_path(idea)) && !activities_history.empty? %>
+		          	<a href="#" value="togglevisibility" onclick="toggle_visibility('history')" class="show-hide">Show/Hide history</a>
+	                <div id="history" style="display:none;">
+
+			          	<% activities_history.each do |activity|%>
+			          	<%= render "surveyor/activity_record", :activity => activity, :idea => idea %>
+			          	<% end unless activities_history.empty? %>
+
+		            </div>
+                <% end %>
+
+                <%= render "surveyor/activity_record", :activity => activity, :idea => idea %>
+
+                	<div class="row-fluid">
+		          		<div  id="post-answer">
+			          		<div><!-- replay -->      
+			          			<%= render "/comments/form", :commentable => activity%>
+			          		</div><!-- /span (replay) -->
+			          	</div><!-- /id post-answer-->
+		          	</div><!-- /row-fluid-->
+
+
+	          </div><!-- /forum-body-->
+	        </div><!-- /stage-row-->
+
+	      </div><!-- /shadow-box-->
+
+
+	      <% end %>
+
+
+
+	    </div><!-- /forum-block-->
+	  </div><!-- /row-fluid-->
+	  <!-- ========== and activity Block ============= -->

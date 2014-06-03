@@ -1,0 +1,103 @@
+<style type='text/css'>
+
+#getDatepicker {
+    z-index: 2000;
+}
+</style>
+
+
+<!-- New Idea form-->
+<%= form_for @idea, :html => { :multipart => true }, :validate => true do |f| %>
+    <div class="modal-body">
+      <%#= render '/shared/errors', :target => @idea %>
+
+      <% if Setting.groups_enabled == 'true' %>
+        <% unless current_user.groups.empty? %>
+          <div class="row-fluid">
+          <label>Group</label>
+          <%= f.collection_select :group_id, current_user.groups, :id, :title %>
+          <em>Which Group you want this idea in?</em>
+          </div><!--/row-fluid-->
+        <% end %>
+      <% end %>
+
+      <div class="row-fluid">
+      <label>Name</label>
+      <%= f.text_field :title, :placeholder => "Give a profesional name to your startup."%>
+      <em>This is the public name of your idea. It can be changed at any time.</em>
+      </div><!--/row-fluid-->
+
+      <div class="row-fluid">
+      <label>Public Description</label>
+      <%= f.text_area :description, :placeholder => "In a sentence or two, let people know what problem you are solving.", :row => "2" %>
+      <em class="mar10-bott">Let people know the focus of your idea. It is NOT what you are doing. It can be changed any time.</em>
+      </div><!--/row-fluid-->
+
+      <div class="row-fluid">
+        <div class="span6">
+          <p class="bold">Date idea created</p>
+        </div><!--/span-->
+        <div class="span6">
+          <%= f.text_field :date_of_birth, :id => "getDatepicker" %>
+          <em>It can be changed any time.</em>
+        </div><!--/span-->
+      </div><!--/row-fluid-->
+
+      <div class="row-fluid">
+        <div class="span6">
+          <p class="bold">What industry is this idea in?</p>
+        </div><!--/span-->
+        <div class="span6">
+          <%= f.collection_select :industry_id, Industry.ordered_industries, :id, :title, {:prompt => 'Select one...'} %>
+          <em>It can be changed at any time.</em>
+        </div><!--/span-->
+      </div><!--/row-fluid-->
+      <div class="row-fluid">
+        <div class="span6">
+          <p class="bold">If you have a logo, upload it here. 
+          <a href="" rel="tooltip" data-placement="top" data-original-title="Please choose jpg or png format of image. If no image is selected some template one will be assigned."><img src="/assets/question.jpg">
+          </a>
+         </p>
+        </div><!--/span-->
+        <div class="span6">
+          <div class="fileupload fileupload-new" data-provides="fileupload">
+            <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;"><img src="http://www.placehold.it/50x50/EFEFEF/AAAAAA" /></div>
+            <div class="fileupload-preview fileupload-exists thumbnail" style="width: 50px; height: 50px;"></div>
+            <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><%= f.file_field :photo, multiple: true, name: "idea[photo]" %></span>
+            <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+          </div>
+          <em>It can be changed any time.</em>
+        </div><!--/span-->
+      </div><!--/row-fluid-->
+
+           
+
+
+    </div><!--/modal-body-->
+
+    <div class="modal-footer">
+    <%= f.submit nil, :class=>"btn btn-success", :disable_with => 'Please wait..' %>
+    <!--a href="">Want to delete this idea?</a-->
+    </div>
+<% end %>
+
+
+
+<script>
+$(function() {
+  $("#getDatepicker").datepicker();
+});
+
+</script>
+
+
+
+
+     <!--script for tooltip question mark-->
+     <script type="text/javascript">
+        $(document).ready(function(){
+            if($("[rel=tooltip]").length){
+                $("[rel=tooltip]").tooltip();
+            }
+        });
+     </script>

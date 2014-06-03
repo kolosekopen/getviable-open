@@ -1,0 +1,34 @@
+<% if @survey %>
+  <h3><%= link_to "<-", admin_surveys_path %> Survey: <%= @survey.title%></h3>
+  <%= @survey.description %><br/>
+  <%#= link_to "Test survey", edit_tour_path(:idea_id => @survey.test_idea_id?) unless @survey.test_idea_id?.nil?%>
+<% end %>
+
+<h4>Survey Sections</h4>
+
+<%= link_to "New section", new_admin_survey_survey_section_path(@survey), :class => "btn" if @survey %>
+
+<table class="sortable table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th><%= "# Id" %></th>
+      <th><%= glyph(:tasks, :white)+"Title" %></th>
+      <th class="third-column"><%= glyph(:filter, :white)+"Description" %></th>
+      <th><i class="icon-pencil icon-white"></i>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @survey_sections.each do |survey_section| %>
+      <tr class="survey_section">
+        <!-- TODO: Don't show link_to action if nothing to edit beneath -->
+        <td class="bold"><%= link_to(survey_section.id, admin_survey_section_questions_path(survey_section)) %></td>
+        <td><%= link_to(survey_section.title, admin_survey_section_questions_path(survey_section)) %></td>
+        <td><%= link_to(survey_section.description, admin_survey_section_questions_path(survey_section)) %></td>
+        <td class="grey">
+          <%= link_to 'Edit', edit_admin_survey_section_path(survey_section), :class => "btn" %>
+          <%= link_to 'Delete', admin_survey_section_path(survey_section), :class => "btn", :method => :delete, :confirm => "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

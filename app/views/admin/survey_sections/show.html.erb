@@ -1,0 +1,22 @@
+<h1>Question for <%= @survey_section.title %></h1>
+<table class="sortable table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th><%= "# Id" %></th>
+      <th><%= glyph(:tasks, :white)+"Text" %></th>
+      <th class="third-column"><%= glyph(:filter, :white)+"Question reference" %></th>
+      <th><i class="icon-pencil icon-white"></i>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+      <% question_reference = Question.find question.question_reference_id unless question.question_reference_id.nil? %>
+      <tr class="question">
+        <td class="bold"><%= link_to(question.id, admin_question_path(question)) %></td>
+        <td><%= "Group : " + question.question_group.text.html_safe + " | " unless question.question_group.nil?%><%= link_to(question.text, admin_question_path(question)) %></td>
+        <td><%= link_to(question_reference.text, admin_question_path(question_reference)) unless question_reference.nil? %></td>
+        <td class="grey"><%= link_to 'Edit', edit_admin_question_path(question) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

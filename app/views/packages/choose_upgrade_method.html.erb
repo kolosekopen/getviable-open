@@ -1,0 +1,100 @@
+<% title "GetViable - Package Upgrade" %>
+<!-- 
+  ==========================================
+  =========================================== -->
+<div class="mid-background m-67-top padding-bottom expert-page">
+  <div class="container">
+
+<div id="dashboard" class="shadow-box unselect">
+
+<!-- ============== Introduction ============= -->
+  <div class="row-fluid introduction-box">
+    
+    <div class="span3"> 
+      <!-- Place for video - do NOT Delete this-->
+    </div><!-- /span3-->
+
+
+
+    <div class="span8">
+    <div class="pull-left intro-box">
+      <h1>You Have Choosen the <%= Package::PACKAGES[@new_package].humanize %> Package</h1>
+      <h4>Access the full power of GetViable to turn your idea into a Startup.</h4>
+    </div><!-- /pull-left-->    
+    </div><!-- /span-->
+
+    
+    
+  </div><!-- and row-fluid introduction-box-->
+  <!-- ============== and Introduction ============= -->
+<div id="form-row">
+    <div class="row-fluid"><!-- row-fluid (form-box)-->
+      <div class="span9 offset2">
+          
+          <!-- ============== Input field ============= -->
+          <div class="row-fluid">
+          <div class="span10 offset2 form-row experts-form">
+            <div class="form-inline">                     
+                <div class="form-box ">
+                  
+                  <h4>If you have a coupon code please enter it here:</h4>
+
+                    <%= form_tag check_promo_code_path, :remote => true do |f| %>
+                      <%= text_field_tag :code, nil, :placeholder => "Type coupon code here", :style => "display: inline; width: 200px;" %>
+                      <%= submit_tag "Submit", :class => "btn btn-warning", :disable_with => "Processing..." %>
+                    <% end %>
+
+                  <%= form_tag(package_upgrade_path) do |f| %>
+                    <%= hidden_field :promo, :package, :value => @new_package %>
+                    <%= hidden_field_tag :promo_code %>
+
+                    <p class="promo_alert" style="margin-top: 10px; color: red;"></p>
+                    <p class="promo_success" style="margin-top: 10px; color: green;"></p>
+                    <p style="margin-top: 20px;">&nbsp;</p><!-- nasty spacer -->
+
+
+
+                    <div class="well well-large">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                           <td id="total_price" class="bold">$<%= @idea.package.regular_price(@new_package) %></td>
+                            <td>Inclusive of GST for Australian residents. 0% Tax for the Rest of the World.</td>
+                          </tr>
+                          </tbody>
+                      </table>
+                      <em>Once the PayPal transaction goes through, you'll be able to access the full power of GetViable.</em>
+                    </div>
+
+                    <fieldset>
+                      <label class="checkbox">
+                        <%= check_box_tag :terms_conditions,:false %>
+                        I agree to the GetViable <%= link_to "terms and conditions", terms_path, :target => "_blank" %>
+                      </label>
+                    </fieldset> 
+
+                    <div id="button-row">
+                      <div class="row-fluid">
+                        <%= submit_tag "Continue to PayPal".html_safe, :class => "btn btn-warning", :disable_with => "Processing..." %>
+                      </div><!-- /row-fluid -->
+                    </div><!-- /and (id) button-row -->
+                  <% end %>
+
+                </div><!-- /form-box-->
+            </div><!-- /form-inline-->
+          </div><!-- /span7 -->
+          </div><!-- /row-fluid --> 
+          <!-- ============== and Input field ============= -->
+
+      </div><!-- /span9 -->
+    </div><!-- /(id) form-row --> 
+  </div>
+
+
+</div><!--/dashboard-->
+
+
+
+
+  </div><!--/container-->
+</div><!--/mid-background-->

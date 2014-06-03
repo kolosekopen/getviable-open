@@ -1,0 +1,36 @@
+<div class="mid-background">
+  <div class="container">
+    <div class="row-fluid">
+    <div class="well well-large">
+      <h1>Forgot your password?</h1>
+      <div class="row-fluid"><!-- input form row-->
+      <div class="login-form">
+      	<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, :class => "form-horizontal btn-center") do |f| %>
+                <%= f.email_field :email, :placeholder => "Email" %>
+                <%= f.submit "Send me reset password instructions", :class =>"btn btn-success btn-block" %>
+        <% end %>
+      </div><!--/login-form-->
+      </div><!-- /row-fluid-->
+      <div class="row-fluid social-row">
+        <ul>
+        <%- if devise_mapping.omniauthable? %>
+      <%- resource_class.omniauth_providers.each do |provider| %>
+        <li>
+          <%= link_to "<i class=\"#{provider.to_s} social-btn\"></i>Sign in with #{provider.to_s.titleize}".html_safe, omniauth_authorize_path(resource_name, provider), :class => "btn" %>
+          </li>
+        
+      <% end -%>
+    <% end -%>
+        </ul>
+      </div><!-- /row-fluid-->
+
+      <p>
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  Need an account? <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+		<% end -%>
+      </p>
+
+    </div><!--/well-->
+    </div><!-- /row-fluid-->         
+  </div><!-- /container-->
+</div><!--/mid-background-->

@@ -1,0 +1,29 @@
+<div class="mid-background">
+  <div class="container">
+    <div class="row-fluid idea-empty-headline">
+    <div class="well well-large">
+      <h1>No Ideas Added</h1>
+      <div class="row-fluid idea-empty-text">
+        <p>Hey. It looks like you haven't added an idea here yet... Just click the button below.</p>
+      </div><!--/row-fluid-->
+      <div class="btn-center"><!-- input form row-->
+        <%= link_to "ADD AN IDEA", new_idea_path, {:remote => true, 'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true, :class => "btn btn-success btn-large"} %>
+      </div><!-- /row-fluid-->
+      <div class="row-fluid idea-empty-text">
+        <h4 class="normal">We keep the detail of your ideas private.</h4>
+      </div><!-- /row-fluid--> 
+
+    </div><!--/well-->
+    <!-- Video-->
+      <div class="row-fluid shadow-box light-grey-bg">
+        <h3 class="normal padd-20-l">What to expect?</h3>
+      </div><!--/row-fluid-->
+
+      <div class="row-fluid center mar-25-t-b">
+          <iframe src="http://fast.wistia.net/embed/iframe/ehwevem8ag?controlsVisibleOnLoad=true&plugin%5BpostRoll-v1%5D%5Braw%5D=%3Cdiv%20style%3D%22text-align%3Acenter%3B%22%3E%3Ca%20href%3D%22http%3A%2F%2Fgetviable.herokuapp.com%2Fusers%2Fsign_up%22%20style%3D%22color%3A%23ffffff%3Btext-decoration%3Anone%3B%22%20target%3D%22_blank%22%3EGet%20Started%20Today%21%3C%2Fa%3E%3C%2Fdiv%3E&plugin%5BpostRoll-v1%5D%5Brewatch%5D=false&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BbackgroundColor%5D=%23616161&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5Bcolor%5D=%23ffffff&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BfontFamily%5D=Gill%20Sans%2C%20Helvetica%2C%20Arial%2C%20sans-serif&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BfontSize%5D=72px&plugin%5BpostRoll-v1%5D%5Bstyle%5D%5BtextAlign%5D=left&version=v1&videoHeight=799&videoWidth=600&volumeControl=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="600" height="799"></iframe>
+      </div><!--/row-fluid-->
+    <!-- and Video-->
+    </div><!-- /row-fluid-->         
+  </div><!-- /container-->
+  </div><!--/mid-background-->
+  <div id="push"></div>

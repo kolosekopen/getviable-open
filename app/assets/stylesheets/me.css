@@ -1,0 +1,492 @@
+*, ::after, ::before {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}  
+#usertask_description {
+	width: 98%;
+}
+
+.tsk-description {
+	background: #eee;
+}
+
+ 
+#ques-answers {
+	border: #666 1px solid;
+	padding: 5px;
+	background: #ccc;
+}
+
+.ques-answers-box {
+	border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	border: 1px solid #6584A5;
+	margin: 5px 0 20px 0;
+	padding: 10px;
+		background: #FFF
+}
+
+.ques-answers-box textarea{
+	width: 98%;
+}
+
+.add_another {
+ 
+	cursor:pointer;
+}
+
+.removable{
+ 
+	cursor:pointer;
+}
+
+select, 
+textarea, 
+input[type="text"], 
+input[type="password"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="date"], 
+input[type="month"], 
+input[type="time"], 
+input[type="week"], 
+input[type="number"], 
+input[type="email"], 
+input[type="url"], 
+input[type="search"], 
+input[type="tel"], 
+input[type="color"]{
+display: inline-block;
+height: 35px;
+padding: 4px 6px;
+margin-bottom: 10px;
+font-size: 14px;
+line-height: 20px;
+color: #555;
+}
+
+/*--------------------------------------------tasks----------------------------------------*/
+
+.ui-widget-overlay
+{
+  opacity: .50 !important;  
+  filter: Alpha(Opacity=50) !important;
+  background-color: #000 !important;  
+}
+
+.ui-dialog .ui-dialog-titlebar { background: #FFF; border: none}
+
+.t-next {
+	margin-right: 3%;
+}
+/*--------------------------------------------tasks----------------------------------------*/
+
+.dashboard-taskinfo {
+   background: url('../images/task-info-bk.jpg') no-repeat;
+   border-bottom: 1px solid #EEE;
+ width: 100%;
+}
+#task-moreinfo {
+	min-height: 225px;
+}
+#task-title-cover  {
+	height: 70px;
+}
+#task-title-cover h1 {
+ font-size: 30px;
+ padding: 0;
+margin: 0;
+ 
+}
+
+.liteAccordion.basic {
+
+	
+}
+.liteAccordion.basic .slide > h2  {
+	background: none;
+}
+.accor-title{
+	float: left;
+	width: 150px;
+}
+ 
+
+.liteAccordion.basic {
+ 
+}
+#accordian-cover{
+  max-width: 530px;
+ 
+}
+#responsive ol li { bottom: 0; }
+
+.liteAccordion .slide > div {
+	top: 40%;
+}
+
+ul.question-list li {
+	list-style: none;
+	
+}
+
+ul.question-list form {
+	
+
+	padding-bottom: 15px;
+}
+
+.each-ques {
+	
+	border-bottom: 1px solid #eee;
+}
+.question-answers .row-fluid {
+	margin-top:15px;
+}
+.question-answers h4 {
+	font-weight: normal;
+}
+
+.form-cover{
+}
+
+
+.adding {
+ margin-top: 10px;
+}
+
+.remove-form  {
+	margin-top: -20px;
+}
+
+.new_answer_form {
+ 
+}
+ .concept-title{
+	color: #333 !important;
+    font-size: 32px;
+	margin : 25px 0 0 10px;
+	font-weight: normal; 
+	float: left;
+}
+.concept-title a, 
+.concept-title a:hover {
+	color: #333 !important;
+	text-decoration: none;
+}
+.header-activity{
+	color: #333 !important;
+	font-size: 32px;
+	margin : 0px 0 0 0px;
+	font-weight: bold;	
+}
+
+.facbook-ask {
+	margin-top: -40px;
+}
+
+ 
+#moving-stages {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+}
+
+ul#horizontal_move{ 
+	list-style: none; 
+    
+	padding: 0 0 0 10px; 
+	float: right;
+	background: #eee ;
+
+}
+ul#horizontal_move li{
+	padding: 0px; 
+	margin:0 2px 0 0; 
+	list-style:none; 
+	display:inline;
+}
+
+
+
+ul#horizontal_move li a{
+	display: inline-block!important; 
+	overflow: hidden; 
+	height: 60px; 
+	line-height:60px; 
+	width: 60px; 
+	white-space:nowrap; 
+	text-align:left; 
+	text-decoration: none;
+}
+ul#horizontal_move li a.current_stage{
+ 
+	width: 320px; 
+ 
+}
+
+.stage-link { 
+	float: left;
+	width: 70px;
+	 }
+.stage-completion {
+	float: left;
+	width: 70px;
+}
+
+.ques-no-ans {
+	margin: 15px 0;
+	font-weight: bold;
+	font-size: 16px;
+}
+ 
+
+ 
+/*--------------------------------------------users----------------------------------------*/
+
+#user_nav {
+  float: right;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.authentications {
+  margin-bottom: 30px;
+}
+
+.authentication {
+  float: left;
+  background-color: #EEE;
+  border: solid 1px #999;
+  padding: 5px 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.authentication .remove {
+  text-decoration: none;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #333;
+  padding: 2px 4px;
+  font-size: 10px;
+}
+
+.authentication .remove:hover {
+  color: #FFF;
+  background-color: #777;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+.authentication img {
+  float: left;
+}
+
+.authentication .provider, .authentication .uid {
+  margin-left: 38px;
+  margin-right: 20px;
+}
+
+.authentication .provider {
+  font-weight: bold;
+}
+
+.authentication .uid {
+  color: #666;
+  font-size: 11px;
+}
+
+.auth_provider img {
+  display: block;
+}
+
+.auth_provider {
+  float: left;
+  text-decoration: none;
+  margin-right: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/*--------------------------------------------concepts----------------------------------------*/
+.progress-writing {
+	position: relative;
+	height: 24px;
+	font-weight: normal;
+}
+.progress-left {
+ position: absolute;
+ left:5px;
+ max-width: 150px;
+}
+.progress-right{
+  position: absolute;
+  max-width: 100px;
+  right: 5px;
+}
+ .progress{
+	margin-bottom: 5px;
+}
+
+.progress-writing{
+	margin-top: -26px;
+	font-size: 12px;
+}
+
+.add_load {
+	visibility: hidden;
+}
+ 
+.concepts_team {
+	height: 220px;
+}
+
+.opener {
+	margin-left:25px !important;
+	font-size:14px ;
+	margin-top: 6px !important;
+}
+.opener  a{
+	font-size:14px !important;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold; 
+	text-shadow: none;
+	padding: 8px 18px;
+	line-height: 30px;
+	
+}
+.opener a i{
+	margin-right: 5px;
+}
+
+.new-invitation-form {
+	background: #FFF;
+	padding: 5px 10px 0 4px;
+	border: 3px #666 solid;
+	z-index: 1000;
+	position: absolute;
+}
+
+.concepts_team {
+		z-index: 400;
+}
+
+.concept-cover {
+	position: relative;
+ 
+}
+.cancel-form{
+	cursor: pointer;
+}
+
+
+.detail-listing .theconeptimg img {
+	width: 200px;
+}
+
+/* --------------------------------- Navigation bar ---------------------------------*/
+.sec-nav {
+	margin: 30px 0;
+}
+.notify{
+	position: relative;
+	width: 14px;
+	height: 14px;
+	margin-top: -13px;
+	margin-left: -12px;
+
+}
+#notification span{
+	position: absolute;
+	color: white;
+	top: 4px;
+	right: 4px;
+	font-size: 10px;
+}
+
+
+/* --- Second Navigation Bar (eg.new Idea row) --- */
+.btn-group .btn a{
+	text-decoration: none;
+}
+.btn-group .btn a:hover{
+	text-decoration: none;
+}
+.dropdown-menu {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1000;
+display: none;
+float: left;
+min-width: 160px;
+padding: 0px 0;
+margin: 0px 0 0;
+list-style: none;
+background-color: white;
+border: 1px solid #CCC;
+border: 1px solid rgba(0, 0, 0, 0.2);
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box;
+}
+.dropdown-menu .divider {
+height: 1px;
+margin: 0px 1px;
+overflow: hidden;
+background-color: #E5E5E5;
+border-bottom: none;
+}
+.dropdown-menu li > a {
+display: block;
+padding: 8px 20px;
+clear: both;
+font-weight: normal;
+line-height: 20px;
+color: #333;
+white-space: nowrap;
+}
+.dropdown-menu li > a:hover{
+color: #4D4A4A;
+text-decoration: none;
+background-color: #0081C2;
+background-image: -moz-linear-gradient(top, #F0F0F0, #F8F8F8);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F0F0F0), to(#F8F8F8));
+background-image: -webkit-linear-gradient(top, #F0F0F0, #F8F8F8);
+background-image: -o-linear-gradient(top, #F0F0F0, #F8F8F8);
+background-image: linear-gradient(to bottom, #F0F0F0, #F8F8F8);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+.dropdown-menu .active a {
+color: #333;
+text-decoration: none;
+background-color: #777;
+background-image: -moz-linear-gradient(top, #E9E9E9, #E9E9E9);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E9E9E9), to(#E9E9E9));
+background-image: -webkit-linear-gradient(top, white, #E9E9E9);
+background-image: -o-linear-gradient(top, #E9E9E9, #E9E9E9);
+background-image: linear-gradient(to bottom, #E9E9E9, #E9E9E9);
+background-repeat: repeat-x;
+outline: 0;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+}
+

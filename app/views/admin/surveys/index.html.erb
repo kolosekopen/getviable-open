@@ -1,0 +1,36 @@
+<h1>Surveys</h1>
+
+<%= form_for @search, :url => admin_surveys_path, :html => { :method => :get, :class => "well form-search" } do |f| %>
+  <%= f.text_field :title_contains, :class => "input-large search-query" %>
+  <%= f.submit "Search", :class => "btn btn-target" %>
+<% end %>
+
+<%= link_to "New Survey", new_admin_survey_path, :class => "btn" %>
+
+<table class="sortable table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th><%= sortable "Id" %></th>
+      <th><%= sortable "Title" %></th>
+      <th class="third-column"><%= sortable "Description" %></th>
+      <th><%= sortable "Active?" %></th>
+      <th><i class="icon-pencil icon-white"></i>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @surveys.each do |survey| %>
+      <tr class="survey">
+        <td class="bold"><%= link_to(survey.id, admin_survey_survey_sections_path(survey)) %></td>
+        <td><%= link_to(survey.title, admin_survey_survey_sections_path(survey)) %></td>
+        <td><%= link_to(survey.description || "", admin_survey_survey_sections_path(survey)) %></td>
+        <td><%= survey.active_at && !survey.inactive_at ? "Yes" : "No" %></td>
+        <td class="grey">
+          <%= link_to 'Edit', edit_admin_survey_path(survey), :class => "btn" %>
+          <%= link_to 'Delete', admin_survey_path(survey), :class => "btn", :method => :delete, :confirm => "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @surveys %>

@@ -1,0 +1,13 @@
+<%= form_tag admin_update_settings_path, :method => :post do %>
+  <% Setting.all.keys.each do |key| %>
+    <div class="row-fluid">
+      <div class="span2" style="line-height:3em;">
+        <%= key %>
+      </div>
+      <div class="span3">
+        <%= text_field_tag "settings[#{key}]", Setting[key].to_s %>
+      </div>
+    </div>
+  <% end %>
+  <%= submit_tag "Update settings" %>
+<% end %>

@@ -1,0 +1,60 @@
+<% if false #if !current_user.nil? || currently_on_page?(pages_index_path, new_user_registration_path, new_user_session_path) %>
+    <footer id="footer-cover">
+        <p>If you need any help click <%= link_to "here", "http://support.getviable.com", :target =>'_blank' %>.</p>
+        <p>&copy;2013 GetViable Pty Ltd. All rights reserved. <%= link_to "Privacy Policy", privacy_path %> | <%= link_to "Terms and Conditions", terms_path %> | All trademarks &trade; their respective owners.</p>
+    </footer>
+<% else %>
+
+  <%= render "layouts/footer_fat" %>
+
+<% end %>
+
+   
+<!-- Loading section
+  ====================-->
+<div id="loading-overlay"></div>
+<div id="loading-box">
+  <%= image_tag "loading.gif"%>
+</div>
+
+
+
+
+
+
+
+<% if Rails.env.production?%>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36607519-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<% if !current_user.nil? || currently_on_page?(new_user_registration_path, new_user_session_path) %>
+
+<!--script type="text/javascript">
+var __lc = {};
+__lc.license = 2277931;
+
+(function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();
+</script-->
+
+<% end %>
+
+
+
+<% end %>
+

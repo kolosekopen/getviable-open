@@ -1,0 +1,33 @@
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="myModalLabel">Add Team Member</h3>
+  </div>
+
+<%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+  <div class="modal-body row-fluid">
+  <%= devise_error_messages! %>
+<%= f.hidden_field :invitation_idea_id, :value => @idea.try(:id) %>
+
+<% resource.class.invite_key_fields.each do |field| -%>
+              <div class="form-box form-sett">   
+                <label class="span4">Email address:</label>
+                <div class="span7">
+                  <%= f.input field, :class=>"pull-left",  :size=>"30" %>
+                <em>Invite your team member</em>
+                </div>
+              </div><!-- /form-box-->
+<% end -%>
+    <div class="form-box form-sett">      
+                <label class="span4">Primary role on idea:</label>
+                <div class="span7">
+                   <%= f.select("invitee_role_id", Role::TYPES.collect {|p| p.reverse }, {:include_blank => 'Select role...'}) %>
+                </div>                
+              </div><!-- /form-box-->
+  <div class="modal-footer">
+    <%= f.submit t("devise.invitations.new.submit_button"),  :class => "btn btn-success" %>
+  </div>
+
+    </div>
+
+
+<% end %>

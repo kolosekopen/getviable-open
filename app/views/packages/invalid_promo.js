@@ -1,0 +1,1 @@
+$('.promo_alert').html("Invalid promo code");

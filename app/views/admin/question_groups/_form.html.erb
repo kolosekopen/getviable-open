@@ -1,0 +1,5 @@
+<%= simple_form_for [:admin, @question_group] do |f| %>
+  <%= f.input :text, :label => "Question group text", input_html: { :style => "width: 500px; height: 60px" } %>
+  <%= f.input :display_type, :collection => {"Inline" => "inline", "Repeater" => "repeater" }, :include_blank => false, input_html: { :style => "width: 100px;" }  %>
+  <%= f.submit %>
+<% end -%>

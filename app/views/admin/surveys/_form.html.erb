@@ -1,0 +1,15 @@
+<%= simple_nested_form_for [:admin, @survey] do |f| %>
+  <%= f.input :title, label: 'Survey title', input_html: { :style => "width: 250px;" } %>
+  <%= f.input :description, label: 'Survey description', input_html: { :style => "width: 400px; height: 60px" } %>
+  <hr />
+  <h5>Sections</h5>
+  <%= f.fields_for :sections, @survey.sections.sort_by(&:id) do |s| %>
+    <%= render 'section_fields', :f => s %>
+  <% end %>
+  
+
+  <%= f.fields_for :sections %>
+  <p><%= f.link_to_add "Add a section", :sections %></p>
+  <hr />
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,10 @@
+      <div class="row-fluid expert-header">
+        <div class="company-name">
+        <div class="company-image">
+          <%= image_tag(idea.photo.url(:micro) || idea.photo.url(:square)) unless idea.nil? %>
+        </div>
+          <div class="name">
+            <%= link_to idea.title, idea_path(idea) unless idea.nil? %>
+          </div>
+      </div>           
+      </div><!-- /row-fluid-->

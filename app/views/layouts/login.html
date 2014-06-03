@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <%= render "layouts/meta" %>
+
+  </head>
+
+  <body id="login" ><!-- Some pages have "login" as id -->
+
+<div id="sticky-wrap"><!-- Sticky wrap is necessary for sticky footer! In content-yield need to add div- see in views/devies/registratiions/new.html.erb -->
+
+    <%= render "layouts/application/header" %>
+    <%= render "layouts/application/flash_messages" %>
+
+
+    <%= yield %>
+
+</div><!--/stycky-wrap-->
+
+    <%= render "layouts/footer"%>
+
+
+</body>
+
+</html>

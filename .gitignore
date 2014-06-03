@@ -1,0 +1,14 @@
+*.swp
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+vendor/bundle
+/.sass-cache/
+/coverage/
+.elasticbeanstalk/
+config/database.yml
+config/s3.yml
+config/heroku.yml
+doc/paypal_response.xml
+surveys/*

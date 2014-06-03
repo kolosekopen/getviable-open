@@ -1,0 +1,22 @@
+<h1>Question</h1>
+
+
+<table id="show-question" class="table table-striped">
+   <thead>
+     <tr>
+       <th>Text:</th>
+       <th class="middle-row"><%= @question.text %></th>
+       <th>Type: <%= @question.pick %></th>
+     </tr>
+   </thead>
+   <tbody>
+    <% @question.answers.each do |answer|%>
+     <tr>
+       <td style="opacity:0; width:140px;"></td>
+       <td><%= answer.text %></td>
+       <td class="grey"><%= link_to "Edit", edit_admin_answer_path(answer) unless answer.text == "String" %></td>
+     </tr>
+       <% end unless @question.answers.empty? %>
+                
+   </tbody>
+ </table>

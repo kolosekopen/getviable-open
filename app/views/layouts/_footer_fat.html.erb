@@ -1,0 +1,51 @@
+<footer id="fat-footer">
+            <div class="container">
+        <div class="row-fluid testamonials ">
+          <ul class="center">
+            <li>
+              <p class="just">"A startup is an organization formed to search for a repeatable and scalable business model."</p>
+              <p class="pull-right bold">- Steve Blank</p>
+            </li>
+            <li>
+              <p class="just">"A startup is a human institution designed to create a new product under conditions of extreme uncertainty."</p>
+              <p class="pull-right bold">- Eric Ries</p>
+            </li>
+          </ul>
+        </div><!--row testamonials--> 
+        <hr>
+        <div class="row-fluid footer-list">
+          <ul class="center">
+            <li>Find out more
+              <ul>
+                <li><a href="http://blog.getviable.com">Articles</a></li>
+                <li><a href="mailto:team@getviable.com">Contact Us</a></li>
+              </ul>
+            </li>
+            <% unless current_user %>
+              <li>Join In
+                <ul>
+                  <li><%= link_to "Sign up", new_user_registration_path %></li>
+                  <li><%= link_to "Sign in", new_user_session_path %></li>
+                </ul>
+              </li>
+            <% end %>
+            <li>Get Help
+              <ul>
+                <li><%= link_to "Support", "http://support.getviable.com", :target =>'_blank' %></li>
+              </ul>
+            </li>
+            <li>Follow Us
+              <ul>
+                <li><a href="https://www.facebook.com/GetViable">Facebook</a></li>
+                <li><a href="http://twitter.com/getviable">Twitter</a></li>
+                <li><a href="https://plus.google.com/116776590245013697864">Google+</a></li>
+                <li><a href="http://www.linkedin.com/company/getviable-pty-ltd">Linkedin</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/row-fluid footer-list-->
+        <hr>
+
+      </div><!--/container-->
+<p>&copy;2013 GetViable Pty Ltd. All rights reserved. <%= link_to "Privacy Policy", privacy_path %> | <%= link_to "Terms and Conditions", terms_path %> | All trademarks &trade; their respective owners.</p>
+    </footer>

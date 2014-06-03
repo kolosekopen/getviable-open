@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <%= render "layouts/meta" %>
+
+  </head>
+
+  <body>
+<div id="sticky-wrap"><!-- Sticky wrap is necessary for sticky footer! In content-yield need to add div- see in views/devies/registratiions/new.html.erb -->
+    <%= render "layouts/dashboard/header" %>
+    <div class="mid-background">
+
+
+      <div class="container">
+
+        <%= render "layouts/application/flash_messages" %>
+
+        <%= yield %>
+
+      </div> <!-- /container -->
+      
+<div id="push"></div><!-- Important to add for sticky footer-->
+    </div><!--mid-background-->
+
+</div><!--/stycky-wrap-->
+    <%= render "layouts/footer" %>
+
+  </body>
+</html>
+

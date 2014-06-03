@@ -1,0 +1,32 @@
+<div class="form-box form-sett edit-team">      
+                <div class="span3">
+                	<div class="image-box-img">
+		              <div class="forum-user">
+                        <%= image_tag member.image? %>
+  			          </div>
+		              <div class="name">
+		                 <p><%= member.name %></p>
+                         <em><%= member.idea_role?(idea) %></em>
+		              </div>         
+		            </div>
+                </div><!--/span-->
+                <div class="span6">
+                <!-- ============ Form =================== -->
+                <% idea_user = IdeasUsers.where(:user_id => member.id, :idea_id => idea.id).first %>
+                <%= form_for idea_user do |f|%>
+                <div class="span11">
+                  <% if idea.is_owner? current_user %>  
+                    <% unless idea_user.user == current_user%>
+                      <%= f.select("role_id", IdeasUsers::TYPES.collect {|p| p.reverse }, {:include_blank => 'Select role...'}) %>
+                    <% else%>
+                      <%= f.select("role_id", {"Business" => "1", "Product" => "2", "Technical" => "3"}, {:include_blank => 'Select role...'}) %>
+                    <% end %>
+                  <% end %>
+                </div> 
+                      <div class="delete-submit">
+                        <%= link_to "", ideas_user_path(idea_user), :class => "delete-team", :method => :delete, :rel=>"tooltip",:confirm => "Are you sure you want to delete this team member?", :data => {'placement' => 'right', 'original-title' => "Delete user"} unless idea.is_owner?(member)%>
+                        <%= f.submit "Save changes", :type => "image", :src=>"/assets/ok-submit.png", :rel=>"tooltip", :data => {'placement' => 'right', 'original-title' => "Save changes"} %>
+                      </div><!--/delete-submit-->
+                <% end %>
+                </div><!--/span-->          
+              </div><!-- /form-box-->

@@ -1,0 +1,84 @@
+<!-- Ask expert page
+  ================================
+  =================================-->
+<div class="mid-background padding-bottom expert-page">
+  <div class="container">
+      
+  <%= render 'partials/idea_header', :idea => @idea %>
+
+
+<!-- Ask expert page- Transaction Faild
+  =====================================
+  ===================================== -->
+<div id="dashboard" class="shadow-box unselect">
+
+<!-- ============== Introduction ============= -->
+  <div class="row-fluid introduction-box">
+    
+    <div class="span3"> 
+      <div class="task-video">
+        
+
+        </div><!-- /task-video -->      
+    </div><!-- /span3-->
+
+
+
+    <div class="span8">
+    <div class="pull-left intro-box">
+      <h1>Transaction Failed</h1>
+      <p class="intro">Something went wrong!</p>
+    </div><!-- /pull-left-->    
+    </div><!-- /span-->
+
+    
+    
+  </div><!-- and row-fluid introduction-box-->
+  <!-- ============== and Introduction ============= -->
+<div id="form-row">
+    <div class="row-fluid"><!-- row-fluid (form-box)-->
+      <div class="span9 offset2">
+       
+
+
+         <!-- ============== Input field ============= -->
+          <div class="row-fluid">
+          <div class="span10 offset2 form-row experts-form">
+            <div class="form-inline">                     
+                <div class="form-box ">
+
+                  <h3 class="red">Transaction failed</h3>
+
+                  <div class="well well-large">
+                    <%= @response.second %>
+                    <br />
+                    <em><span class="red">*</span> Please update action based on error message</em>
+                  </div>
+
+                  <form>
+                  <div id="button-row">
+                    <div class="row-fluid">
+                      <!--input type="submit" class="btn btn-success" value="Try again"-->
+                    </div><!-- /row-fluid -->
+                  </div><!-- /and (id) button-row -->
+                  </form>
+
+                </div><!-- /form-box-->
+            </div><!-- /form-inline-->
+          </div><!-- /span7 -->
+          </div><!-- /row-fluid --> 
+          <!-- ============== and Input field ============= -->
+    
+      </div><!-- /span9 -->
+    </div><!-- /(id) form-row --> 
+  </div>
+
+
+
+
+</div><!--/dashboard-->
+
+
+
+  </div><!--/container-->
+</div><!--/mid-background-->

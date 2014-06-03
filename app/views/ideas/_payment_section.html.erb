@@ -1,0 +1,198 @@
+<div class="row-fluid logged-bg"> 
+<!--div class="row-fluid box-row-title">
+  <h3>Startup Package</h3> 
+
+</div><!- /row-fluid--> 
+
+<!--div class="row-fluid mid-background padd-10">
+    <h3 class="normal">Access the full power of GetViable!</h3>
+    <p>Get Ready for funding, investors, mentors and co-founders.</p>
+
+    <div class="row-fluid pricing-stage-row">
+      <div class="span2">
+
+        <h4 class="green-col">FREE</h4>
+<div class="row-fluid well free-well">
+        <div class="row-fluid stage-price">
+          <p class="bold"><span class="btn-clarify"><i class="iconv-newclarify"></i></span>Clarify idea</p>
+        </div><!-/row-fluid->
+        <p>Get your idea clear in your head and work out whether your idea has potential!</p>
+      </div><!-/span->
+      </div><!-/span->
+
+      <div class="span10">
+
+        <h4 class="grey-col">STARTUPS ONLY</h4>
+        <div class="row-fluid well white-well">
+
+        <div class="span3">
+        <div class="row-fluid stage-price">
+          <p class="bold"><span class="btn-target"><i class="iconv-newtarget"></i></span>Identify Customers</p>
+        </div><!-/row-fluid->
+        <p>Understand what makes you different and why your customers will pay for your product and services.</p>
+        </div><!-/span->
+
+        <div class="span3">
+        <div class="row-fluid stage-price">
+          <p class="bold"><span class="btn-discovery"><i class="iconv-newdiscovery"></i></span>Idea Validation</p>
+        </div><!-/row-fluid->
+        <p>Work out what you need to do to make sure you have a real solution to real problems for real customers.</p>
+        </div><!-/span->
+
+        <div class="span3">
+        <div class="row-fluid stage-price">
+          <p class="bold"><span class="btn-design"><i class="iconv-newdesign"></i></span>Design</p>
+        </div><!-/row-fluid->
+        <p>Get access to trusted, experienced, and affordable talent to design your product and get it ready to be built.</p>
+        </div><!-/span->
+
+        
+
+        <div class="span3">
+        <div class="row-fluid">
+            <div class="row-fluid stage-price">
+          <p class="bold"><span class="btn-build">
+            <i class="iconv-newbuild"></i></span>Build MVP</p>
+        </div><!-/row-fluid->
+        <p>Access exclusive money-saving deals and learn the tips of how best to get your product built affordably.</p>
+        </div><!-/row-fluid->
+        </div><!-/span->
+
+        </div><!-/row-fluid->
+      </div><!-/span->
+
+    </div><!-/row-fluid pricing-stage-row->
+
+  </div--><!--/row-fluid-->
+
+   <div class="row-fluid price-stage-row"> 
+    <h3 class="normal level-box">Upgrade for step by step guidance from idea to pitch.<!--span class="badge">Limited<br> Time<br> Offers!</span--></h3>
+  </div><!-- price stage row-->
+
+<div class="row-fluid padd-20-bott price-stage-row"> 
+
+<div class="span7 single-box-price">
+  <div class="shadow-box level">
+  <div class="level-box free">
+    <h2>Startup</h2>
+    <div class="row-fluid">
+      <div class=""></div>
+      <div class="offset1 span4">
+        <ul>
+          <li><i class="icon-ok"></i>Full Startup Process</li>
+          <li><i class="icon-ok"></i>Work with your team</li>
+          <li><i class="icon-ok"></i>Connect to Founders</li>
+          <li><i class="icon-ok"></i>Access to startup deals</li>
+        </ul>
+      </div><!--span-->
+      <div class="span6">
+        <ul>
+          <li><i class="icon-ok"></i>Idea Summary + Business Summary</li>
+          <li><i class="icon-ok"></i>Customer & Competition Summary</li>
+          <li><i class="icon-ok"></i>Features to UVP Summary</li>
+          <li><i class="icon-ok"></i>Customer Validation</li>
+          <li><i class="icon-ok"></i>MVP Testing</li>
+        </ul>
+      </div><!--span-->
+    </div><!--/row-fluid-->
+    <div class="row-fluid center">
+      <h4 class="normal"><span class="red-col">BONUS:</span> Guy Kawasaki's "Pitch Your Idea" <br>
+          & Executive Summary</h4>
+    </div><!--/row-fluid-->
+    
+    <div class="level-price">
+    <h3 class="blue-col">$<%= Package::PRICE[Package::SILVER] %></h3>
+    <p>Normal price $249</p>
+    </div><!--/level-price-->
+    <% if @idea.package.free? %>
+    <a href="<%= choose_upgrade_method_path(@idea.id, package: Package::SILVER) %>" class="btn btn-success">UPGRADE
+    <i class=" icon-share-alt icon-white"></i></a>
+    <% elsif @idea.package.silver? %>
+    <a href="#" class="btn btn-success">CURRENT</a>
+    <% end %>
+  </div><!-- /level-box -->
+</div><!-- /shadow-box -->
+</div><!--/offset-->
+
+<!-- ============ Colummn 1 =================== -->
+<!--div class="span4">
+<div class="shadow-box level silver-box">
+  <div class="level-box free">
+    <h2>Silver</h2>
+    <ul>
+      <li><i class="icon-ok"></i>Launch your idea as a startup</li>
+      <li><i class="icon-ok"></i>Full Step-by-Step Process </li>
+      <li><i class="icon-ok"></i>Full startup deals access</li>
+      <li><i class="icon-ok"></i>Free Expert Review at and of design stage</li>
+      <li><i class="icon-ok"></i>Startup visibility on homepage</li>
+    </ul>
+    <div class="level-price">
+    <h3 class="blue-col">$<%= Package::PRICE[Package::SILVER] %></h3>
+    <p>Normal price $249</p>
+    </div>
+    <% if @idea.package.free? %>
+    <a href="<%= choose_upgrade_method_path(@idea.id, package: Package::SILVER) %>" class="btn btn-success">UPGRADE
+    <i class=" icon-share-alt icon-white"></i></a>
+    <% elsif @idea.package.silver? %>
+    <a href="#" class="btn btn-success">CURRENT</a>
+    <% end %>
+  </div>
+</div>
+</div--><!-- /span4-->
+<!-- ============ Colummn 2 =================== -->
+<!--div class="span4">
+<div class="shadow-box level gold-box">
+<div class="level-box">
+    <h2>Gold</h2>
+    <ul>
+      <li><i class="icon-ok"></i>Launch your idea as a startup</li>
+      <li><i class="icon-ok"></i>Full Step-by-Step Process </li>
+      <li><i class="icon-ok"></i>Full startup deals access</li>
+      <li><i class="icon-ok"></i>Free Expert Review at and of design stage</li>
+      <li><i class="icon-ok"></i>Startup visibility on homepage</li>
+      <li class="center bold"><h3>PLUS</h3></li>
+      <li class="bold center"><h5><i class="icon-ok"></i>Access to expert guidance (up to twice per month)
+</h5></li>
+    </ul>
+    <div class="level-price">
+    <h3 class="blue-col">$<%= Package::PRICE[Package::GOLD] %></h3>
+    <p>normal price $999</p>
+    </div><!-/level-price->
+    <% if @idea.package.free? || @idea.package.silver? %>
+    <a href="<%= choose_upgrade_method_path(@idea.id, package: Package::GOLD) %>" class="btn btn-success">UPGRADE
+    <i class=" icon-share-alt icon-white"></i></a>
+    <% elsif @idea.package.gold? %>
+    <a href="#" class="btn btn-success">CURRENT</a>
+    <% end %>
+
+</div--><!-- /level-box -->
+
+<!--span class="label ">MOST POPULAR</span>
+</div><!- /shadow-box ->
+</div--><!-- /span4-->
+<!-- ============ Colummn 3 =================== -->
+<!--div class="span4">
+<div class="shadow-box level platinum-box">
+  <div class="level-box  free">
+      <!-span class="badge">Limited<br> Time<br> Offers!</span->
+    <h2>Communities</h2>
+    <ul>
+      <li><i class="icon-ok"></i>Coworking  spaces</li>
+      <li><i class="icon-ok"></i>Hackathons </li>
+      <li><i class="icon-ok"></i>Incubators</li>
+      <li><i class="icon-ok"></i>Accelerators </li>
+      <li><i class="icon-ok"></i>Universities</li>
+      <li><i class="icon-ok"></i>Enterprise</li>
+    </ul>
+    <div class="level-price">
+    <h5>Get your  community collaborating  on  
+starting up  their ideas</h5> 
+  </div>
+    <a href="mailto:team@getviable.com" class="btn btn-warning">ENQUIRE  NOW</a>
+</div><!- /level-box ->
+</div><!- /shadow-box ->
+</div--><!-- /span4-->
+
+</div><!--/row-fluid user-padd-->
+
+</div><!--/row-fluid-->

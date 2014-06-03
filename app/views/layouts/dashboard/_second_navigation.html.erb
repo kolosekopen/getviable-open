@@ -1,0 +1,16 @@
+<%#Requirements: = render "layouts/dashboard/second_navigation", :idea => @idea %>
+
+<!-- _____________________________ Second Navigation Bar _____________________________ -->  
+<div class="row-fluid sec-nav">
+  <div class="span6">
+      <%= image_tag idea.photo.url(:square), :class => "pull-left m5", :style => "width:50px; height:50px;" %>
+      <!--img alt="Default-startup-profile" class="pull-left m5" src="http://startupmyidea.com/images/default-startup-profile.png" /--> 
+      <div class="concept-title">
+        <%unless idea.nil?%>
+        <%= link_to idea.title, idea %>
+        <% end %>
+      </div>
+    </div><!-- /span6-->
+
+</div><!-- /row fluid -->
+<!-- __________________________ /and Second Navigation Bar ___________________________ -->

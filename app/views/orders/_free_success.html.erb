@@ -1,0 +1,78 @@
+<!-- 2.4.3. Startup selection -thank you
+  ==========================================
+  =========================================== -->
+<div class="mid-background m-67-top padding-bottom expert-page">
+  <div class="container">
+
+<div id="dashboard" class="shadow-box unselect">
+
+<!-- ============== Introduction ============= -->
+  <div class="row-fluid introduction-box">
+    
+    <div class="span3"> 
+      <!-- Place for video (see Ask Expert Page) - do NOT Delete this-->
+    </div><!-- /span3-->
+
+
+
+    <div class="span8">
+    <div class="pull-left intro-box">
+      <h1>Thank you</h1>
+    </div><!-- /pull-left-->    
+    </div><!-- /span-->
+
+    
+    
+  </div><!-- and row-fluid introduction-box-->
+  <!-- ============== and Introduction ============= -->
+<div id="form-row">
+    <div class="row-fluid"><!-- row-fluid (form-box)-->
+      <div class="span9 offset2">
+          
+          <!-- ============== Input field ============= -->
+          <div class="row-fluid">
+          <div class="span10 offset2 form-row experts-form">
+            <div class="form-inline">                     
+                <div class="form-box ">
+                  
+                  <h4>Please confirm which idea you want to launch as a Startup.</h4>
+
+                  <%= form_tag(user_startup_idea_path) do |f| %>
+                    <% current_user.ideas.each_with_index do |idea, index| %>
+                      <label class="radio">
+                        <% if index == 0 %>
+                          <%= radio_button_tag 'idea_id', idea.id, :checked => true %>
+                        <% else %>
+                          <%= radio_button_tag 'idea_id', idea.id %>
+                        <% end %>
+                        <%= idea.title %>
+                      </label>
+                    <% end %>
+                
+                    <p class="m-20-top">Choose carefully, this cannot be changed at a later date.</p>
+
+                    <div id="button-row">
+                      <div class="row-fluid">
+                        <%= submit_tag "Confirm Choice".html_safe, :class => "btn btn-success", :disable_with => "Confirming..." %>
+                      </div><!-- /row-fluid -->
+                    </div><!-- /and (id) button-row -->
+                  <% end %>
+
+                </div><!-- /form-box-->
+            </div><!-- /form-inline-->
+          </div><!-- /span7 -->
+          </div><!-- /row-fluid --> 
+          <!-- ============== and Input field ============= -->
+
+      </div><!-- /span9 -->
+    </div><!-- /(id) form-row --> 
+  </div>
+
+
+</div><!--/dashboard-->
+
+
+
+
+  </div><!--/container-->
+</div><!--/mid-background-->

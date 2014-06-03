@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Viable</title>
+    <meta content="authenticity_token" name="csrf-param" />
+	<meta content="fdSH151ZV2WNFXtuDShbfm1Q1izV8J60YBwTcQ1+7os=" name="csrf-token" />
+
+<!-- slider-->
+  	<link rel="stylesheet" type="text/css" href="stylesheets/elastislide/demo.css" />
+   	<link rel="stylesheet" type="text/css" href="stylesheets/elastislide/elastislide.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/elastislide/custom.css" />
+<!-- /slider-->
+  	<link rel="stylesheet" href="stylesheets/bootstrap.css">
+  	<link rel="stylesheet" href="stylesheets/bootstrap-responsive.css">
+  	<link rel="stylesheet" href="stylesheets/jquery-ui-1.9.1.custom.css">
+  	<link rel="stylesheet" href="stylesheets/helpers.css" > 
+  	<link rel="stylesheet" href="stylesheets/timeline.css">
+  	<link rel="stylesheet" href="stylesheets/jquery.fileupload-ui.css">
+  	<link rel="stylesheet" href="stylesheets/liteaccordion.css" >
+  	<link rel="stylesheet" href="stylesheets/tasker.css">
+  	<link rel="stylesheet" href="stylesheets/jquery.rating.css">
+  	<link rel="stylesheet" href="stylesheets/application.css" >
+  	<link rel="stylesheet" href="stylesheets/me.css" >
+  	<link rel="stylesheet" href="stylesheets/jelena-style.css" >
+
+ <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+ <!--[if lt IE 9]>
+   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+ <![endif]-->
+ 
+	
+
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+
+
+    
+	<script src="javascripts/elastislide/modernizr.custom.17475.js"></script>
+</head>
+
+<body>
+	
+<!-- ______________________________ Navigation Bar ______________________________ -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+        	<!-- Navigation Bar responsive  -->
+	          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </a>
+	        <!--  /Navigation Bar responsive  -->
+	         
+			<a href="http://startupmyidea.com/my/concepts" class="brand" title="Get Viable Start up your idea">
+				<img alt="Vibbly" src="images/vibbly.png?1355095924" />
+			</a>
+
+	   		<div class="opener brand btn-small btn btn-success">
+	   			<a href="/my/concepts">
+	   				<i class="icon-plus icon-white"></i> NEW IDEA
+	   			</a>
+	   		</div>
+
+	        <div class="nav-collapse collapse ">		
+	            <ul class="nav pull-right">
+		             <li><a id="notification" href="#"><img src="images/nav-icons/conversation.png">
+		             	<img class="notify" src="images/nav-icons/notify.png"><span>3</span></a> </li>	              
+	                 <li><a id="notification" href="/my/activities?filter=following"><img src="images/nav-icons/globe.png">
+		             	<img class="notify" src="images/nav-icons/notify.png"><span>3</span></a> </li>
+
+	             	 <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/nav-icons/book.png"> Your Ideas <i class="dropdown-symbol"></i></a> 	
+		                <ul class="dropdown-menu">		                                
+						 	<li class="dropdown"><a href="/my/concepts">My Startup List</a></li>         
+						  	<li class="divider"></li>		                  
+							<li><a href="http://startupmyidea.com/my/tasks/111/?&amp;concept=83&amp;stage=1">Transpee</a></li>		          
+							<li><a href="http://startupmyidea.com/my/tasks/111/?&amp;concept=90&amp;stage=1">new idea</a></li>     
+			           		<li class="divider"></li>		 
+			              	<li class="nav-header">Team member of</li>
+						</ul>
+		             </li>
+		
+	              	 <li><a href="/my/activities?filter=following">
+	              	 		<img src="images/nav-icons/alert.png"> Newsfeed
+	              	 	 </a></li>
+
+	              	 <li class="dropdown">
+	                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	                		<img src="images/nav-icons/man.png"> Nebojsa Zoric 
+	                		<i class="dropdown-symbol"></i></a>
+	                 	            
+	                 	<ul class="dropdown-menu">
+ 					  		<li><a href="http://startupmyidea.com/my/users/19">My Profile</a></li>
+ 	                  		<li class="divider"></li>
+	                  		<li><a href="/users/sign_out" data-method="delete" rel="nofollow">
+	                  			<i class="icon-thumbs-up"></i> Sign Out</a></li>
+	                 	</ul>
+	              	 </li>
+	                 <li><a href="/"><img src="images/nav-icons/home.png"> Home</a></li>
+	            </ul>
+	       
+	          </div><!--/.nav-collapse -->
+	        </div>
+	      </div>
+	    </div>
+
+<!-- ______________________________ /and Navigation Bar ______________________________ -->
+
+ <div id ="form-location"></div><!-- Is this necessary? J.-->
+
+  <div class="mid-background">
+	<div class="container"> 
+		<!-- Container for anounsment, is sign in successfull or not J.-->
+	  <!-- Rest of content -->  
+	</div>
+
+ 
+    <div class="container">
+    <!--<div class="clear15"></div> obrisati-obrisati!!! -->
+ 	<!-- <div class="clear15"></div> obrisati-obrisati!!! --> 
+
+<!-- _____________________________ Second Navigation Bar _____________________________ -->	
+<div class="row-fluid sec-nav">
+	<div class="span6">
+	
+  		<img alt="Default-startup-profile" class="img-polaroid pull-left m5" src="http://startupmyidea.com/images/default-startup-profile.png" /> 
+  		<div class="concept-title">
+  			<a href="/my/concepts/new-idea" class="">new idea</a></div>
+    </div><!-- /span6-->
+ 
+    <div class="span6">
+	
+  
+     <div class="clear10"></div><!-- Is this necessary? J.-->
+	 <div class="btn-toolbar pull-right">
+	 <div class="btn-group">	 	
+       	  	<div class="btn" ><!-- umesto <li></li> stavila div tagove -->
+		  		<a href="http://startupmyidea.com/my/tasks/111/?&amp;concept=90&amp;stage=1">
+		       Startup Home</a></div>
+		 	<div class="btn"><a href="/my/concepts/new-idea">Startup Profile</a></div>
+		 	<div class="btn dropdown">
+	                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	                		Startup settings 
+	                		<i class="dropdown-symbol"></i></a>
+	                 	            
+	                 	<ul class="dropdown-menu">
+ 					  		<li><a href="">Settings one</a></li>
+ 	                  		<li class="divider"></li>
+	                  		<li><a href="">Second settings</a></li>
+	                  		<li class="divider"></li>
+	                  		<li><a href="">Profile settings</a></li>
+	                  		<li class="divider"></li>
+	                  		<li><a href="">Fourth settings</a></li>
+	                 	</ul>
+	        </div>	 
+	 </div><!-- /btn-group-->
+	 </div><!-- /btn-toolbar -->
+	 
+    </div><!-- /span 6 -->
+</div><!-- /row fluid -->
+<!-- __________________________ /and Second Navigation Bar ___________________________ -->
+
+ 
+<!-- <div class="clear20"></div> obrisati-obrisati!!! --> 
+
+<!-- _________________________ Shadow box (slider and buttons)_______________________ -->
+<div class="shadow-box box-style"><!-- interni stil je prebacen u externi "jelena-style.css" pod nazivom .box-style? 
+Stari slider je OBRISAN-->
+
+
+<!-- ___________________________________Elastislide Carousel_______________________ -->
+ 
+<!-- Elastislide Carousel -->
+<div id="wrapper-cover" class="demo-1">
+	<!--div class="container-elastide demo-1">
+				<ul id="carousel" class="elastislide-list">
+					<li><a href="#"><img src="images/elastislide/small/1.jpg" alt="image01" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/2.jpg" alt="image02" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/3.jpg" alt="image03" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/4.jpg" alt="image04" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/5.jpg" alt="image05" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/6.jpg" alt="image06" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/7.jpg" alt="image07" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/8.jpg" alt="image08" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/9.jpg" alt="image09" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/10.jpg" alt="image10" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/11.jpg" alt="image11" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/12.jpg" alt="image12" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/13.jpg" alt="image13" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/14.jpg" alt="image14" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/15.jpg" alt="image15" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/16.jpg" alt="image16" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/17.jpg" alt="image17" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/18.jpg" alt="image18" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/19.jpg" alt="image19" /></a></li>
+					<li><a href="#"><img src="images/elastislide/small/20.jpg" alt="image20" /></a></li>
+				</ul>
+	</div-->
+</div>
+<!-- End Elastislide Carousel -->
+
+<!-- Elastislide Carousel Script --> 
+	<!--script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="javascripts/elastislide/jquerypp.custom.js"></script>
+		<script type="text/javascript" src="javascripts/elastislide/jquery.elastislide.js"></script>
+		<script type="text/javascript">
+			
+			$( '#carousel' ).elastislide();
+			
+		</script-->
+<!-- End Elastislide Carousel Script -->
+
+<!-- ________________________________ and Elastislide Carousel_______________________ -->
+ 
+	<!--<div class="clear"></div> delete, delete,delete!!! -->
+
+
+<!-- ____________________________Slider(ex.Responsive) buutons _______________________ -->
+
+<div class="row-fluid" >
+<div class="slider-btn-box" >
+	<div class="done-stage pull-left">
+		<ul>
+			<li><a href="" class="btn btn-idea">
+				<i class="iconv-idea" ></i>
+			</a></li>
+		</ul>
+	</div><!-- /done-stage-->
+
+	<div class="curent-stage pull-left">
+		<a href="" class="btn btn-getviable pull-left">
+			<i class="iconv-getviable" ></i>
+		</a>
+		<div class="pull-left">
+			<!--every stage has its class color, for example .idea-stage, design-stage...-->
+			<p class="getviable-stage">Clarify idea</p>
+		</div>
+
+	</div><!-- /curent-stage-->
+
+	<div class="to-do-stage pull-right">
+		<ul>
+			<li><a href="" class="btn btn-design">
+				<i class="iconv-design" ></i>
+			</a></li>
+			<li><a href="" class="btn btn-engage">
+				<i class="iconv-engage" ></i>
+			</a></li>
+			<li><a href="" class="btn btn-build">
+				<i class="iconv-build"></i>
+			</a></li>
+		</ul>
+	</div><!-- /to-do-stage-->
+</div><!-- /slider-btn-box-->
+</div><!-- /row-fluid-->
+<!-- former slider (responsive) buttons, need to delete
+<div id="responsive"> 
+ 
+	
+        <ol>
+	      
+	       	<li>
+                <h2><a href="http://startupmyidea.com/my/tasks/111/?&amp;concept=90&amp;stage=1">	    
+				<b><span class="btn btn-idea"><i class="iconv-idea"></i></span></b> </a></h2>
+                <div class="color-idea "><span class="bold uppercase fs18">Clarify Idea</span>
+	
+ Not Started 
+			 
+                </div>
+            </li>
+	      
+	       	<li>
+                <h2><a href="http://startupmyidea.com/my/tasks/131/?&amp;concept=90&amp;stage=2">	    
+				<b><span class="btn btn-getviable"><i class="iconv-getviable"></i></span></b> </a></h2>
+                <div class="color-getviable "><span class="bold uppercase fs18">Target Customers</span>
+			 
+                </div>
+            </li>
+	      
+	       	<li>
+                <h2><a href="http://startupmyidea.com/my/tasks/144/?&amp;concept=90&amp;stage=14">	    
+				<b><span class="btn btn-design"><i class="iconv-design"></i></span></b> </a></h2>
+                <div class="color-design "><span class="bold uppercase fs18">Design</span>
+			 
+                </div>
+            </li>
+	      
+	       	<li>
+                <h2><a href="http://startupmyidea.com/my/tasks/137/?&amp;concept=90&amp;stage=9">	    
+				<b><span class="btn btn-engage"><i class="iconv-engage"></i></span></b> </a></h2>
+                <div class="color-engage "><span class="bold uppercase fs18">Customer Discovery</span>
+			 
+                </div>
+            </li>
+	      
+	       	<li>
+                <h2><a href="http://startupmyidea.com/my/tasks/168/?&amp;concept=90&amp;stage=8">	    
+				<b><span class="btn btn-build"><i class="iconv-build"></i></span></b> </a></h2>
+                <div class="color-build "><span class="bold uppercase fs18">Build MVP</span>
+			 
+                </div>
+            </li>
+        </ol>
+     
+    </div> 
+--><!--former slider buttons(responsive-accordian)-need to delete-->
+<!-- _____________________________ and Slider(ex.Responsive) buutons___________________ -->
+
+    
+
+<!--<div class="clear"></div> delete, delete,delete!!! -->
+
+</div><!--/shadow box-->
+
+ <!-- ___________________ /and Shadow box (slider and buttons) ______________________ -->
+
+<!--<div class="clear20"></div> delete, delete,delete!!! -->
+
+<!-- ________________Information Dashboard (old Shadow box)_____________________________--> 
+
+<div id="dashboard" class="shadow-box">
+	<%= yield %>
+</div><!-- / Shadow box-->
+
+<!-- _____________And Information Dashboard (old Shadow box)_____________________________-->
+
+ <!-- ______________________________and Forum field___________________________________-->
+
+<div id="forum-field">
+	<div class="span8 offset1 field-bg">
+
+		<!-- ============== Buttons and Search ============= -->
+		<div class="row-fluid">
+			<div class="box-buttons"><!-- buttons -->
+				<ul>
+					<li><a href=""><img class="li-down" src="images/forum/eye-btn.png"></a></li>
+					<li><a href=""><img class="li-up" src="images/forum/edit-btn.png"></a></li>
+					<li><a href=""><img class="li-down" src="images/forum/share-btn.png"></a></li>
+				</ul>
+			</div><!-- /box-buttons -->
+
+			<div class="box-search"><!-- search -->
+				<form class="form-search pull-right">
+  					<input type="text" class="input-medium search-query" placeholder="search">
+  					<button type="submit" class="btn btn-info">
+  						<i class="icon-search icon-white"></i></button>
+				</form>
+			</div><!-- /box-search -->
+		</div><!-- /row-fluid-->
+		<!-- ============ and Buttons and Search ============= -->
+
+		<!-- ============ Engage Block ============= -->
+		<div class="row-fluid">
+			<div class="forum-block">
+				<div class="engage-image block-line">
+					<img src="images/forum/engage-image.png" alt="engage-image">
+				</div><!-- /engage-block -->
+
+				<div class="shadow-box pull-right">
+					<div class="forum-header">
+						<div class="idea-name-logo">
+							<img class="img-header" src="images/default-startup-profile.png" alt="default-startup-profile">
+							<p>Zizzam Idea</p>
+						</div><!-- /idea-name-logo-->
+
+						<div class="header-path">
+							<p>Zizzam just became a startup</p>
+						</div><!--  / header-path-->
+					</div><!-- /forum-header-->
+
+					<div class="forum-body">
+						<div id="comment" class="row-fluid"><!-- comment -->
+						<div class="forum-user">
+							<img src="images/forum/avatar.jpg">
+							<p>Jenifar</p>
+						</div><!-- /forum-user-->
+						<div class="comments-replay">
+							<div class="user-comment-bg">
+							<div class="user-comment">
+								<p>Zizzam can now access:<br>
+									Expert suppert from team and other startus peers in the forum <br>
+									Our mentro Marketplace
+								</p>
+								<p class="info">October 1 at 7.33pm</p>
+							</div><!-- /comment -->
+							</div><!-- /user-comment-bg-->
+
+							<div class="comment-info">
+								<ul>
+									<li>
+										<img src="images/forum/forum-comment.png">
+										<p><span>10</span> comments |</p>
+									</li> 
+									<li>
+										<img src="images/forum/forum-minus.jpg">
+										<a href=""> See all comments</a>
+									</li>
+								</ul>
+							</div><!-- /comments-info -->
+						</div><!-- /comments-replay -->
+						</div><!-- /row-fluid (comment) -->
+
+						<div id="replay" class="row-fluid">
+						<div id="replay" class="offset1 span10"><!-- replay -->
+							<div class="forum-user">
+								<img src="images/forum/avatar.jpg">
+								<p>Jenifar</p>
+							</div><!-- /forum-user-->
+							<div class="comments-replay">
+								<div class="user-comment-bg">
+								<div class="user-comment">
+									<p>Zizzam can now access:<br>
+									Expert suppert from team and other startus peers in the forum <br>
+									Our mentro Marketplace
+									</p>
+									<p class="info">October 1 at 7.33pm</p>
+								</div><!-- /comment -->
+								</div><!-- /user-comment-bg-->
+							</div><!-- /comments-replay -->
+						</div><!-- /span (replay) -->
+						</div><!-- /id replay-->
+
+						<div id="replay" class="row-fluid">
+						<div class="offset1 span10"><!-- replay -->
+							<div class="forum-user">
+								<img src="images/forum/avatar.jpg">
+								<p>Jenifar</p>
+							</div><!-- /forum-user-->
+							<div class="comments-replay">
+								<div class="user-comment-bg">
+								<div class="user-comment">
+									<p>Zizzam can now access:<br>
+									Expert suppert from team and other startus peers in the forum <br>
+									Our mentro Marketplace
+									</p>
+									<p class="info">October 1 at 7.33pm</p>
+								</div><!-- /comment -->
+								</div><!-- /user-comment-bg-->
+							</div><!-- /comments-replay -->
+						</div><!-- /span (replay) -->
+						</div><!-- /id replay-->
+
+						<div id="post-answer" class="row-fluid">
+						<div class="offset4 span8"><!-- replay -->
+							
+							<form>
+  								<textarea placeholder="Type message"></textarea>
+  								<input type="submit" class="btn btn-success pull-right" value="Submit">
+  								</input>
+							</form>
+
+						</div><!-- /span (replay) -->
+						</div><!-- /id post-answer-->
+
+
+					</div><!-- /forum-body-->
+				</div><!-- /shadow-box-->
+
+			</div><!-- /engage-block-->
+		</div><!-- /row-fluid-->
+		<!-- ========== and Engage Block ============= -->
+
+		<!-- ============ Design Block ============= -->
+		<div class="row-fluid">
+			<div class="forum-block">
+				<div class="engage-image block-line">
+					<img src="images/forum/design-image.png" alt="engage-image">
+				</div><!-- /engage-block -->
+
+				<div class="shadow-box pull-right">
+					<div class="forum-header">
+						<div class="idea-name-logo">
+							<img class="img-header" src="images/default-startup-profile.png" alt="default-startup-profile">
+							<p>Zizzam Idea</p>
+						</div><!-- /idea-name-logo-->
+
+						<div class="header-path">
+							<p>Zizzam just became a startup</p>
+						</div><!--  / header-path-->
+					</div><!-- /forum-header-->
+
+					<div class="forum-body">
+						<div id="comment" class="row-fluid"><!-- comment -->
+						<div class="forum-user">
+							<img src="images/forum/avatar.jpg">
+							<p>Jenifar</p>
+						</div><!-- /forum-user-->
+						<div class="comments-replay">
+							<div class="user-comment-bg">
+							<div class="user-comment">
+								<p>Zizzam can now access:<br>
+									Expert suppert from team and other startus peers in the forum <br>
+									Our mentro Marketplace
+								</p>
+								<p class="info">October 1 at 7.33pm</p>
+							</div><!-- /comment -->
+							</div><!-- /user-comment-bg-->
+
+							<div class="comment-info">
+								<ul>
+									<li>
+										<img src="images/forum/forum-comment.png">
+										<p><span>10</span> comments |</p>
+									</li> 
+									<li>
+										<img src="images/forum/forum-minus.jpg">
+										<a href=""> See all comments</a>
+									</li>
+								</ul>
+							</div><!-- /comments-info -->
+						</div><!-- /comments-replay -->
+						</div><!-- /row-fluid (comment) -->
+
+						<div id="replay" class="row-fluid">
+						<div id="replay" class="offset1 span10"><!-- replay -->
+							<div class="forum-user">
+								<img src="images/forum/avatar.jpg">
+								<p>Jenifar</p>
+							</div><!-- /forum-user-->
+							<div class="comments-replay">
+								<div class="user-comment-bg">
+								<div class="user-comment">
+									<p>Zizzam can now access:<br>
+									Expert suppert from team and other startus peers in the forum <br>
+									Our mentro Marketplace
+									</p>
+									<p class="info">October 1 at 7.33pm</p>
+								</div><!-- /comment -->
+								</div><!-- /user-comment-bg-->
+							</div><!-- /comments-replay -->
+						</div><!-- /span (replay) -->
+						</div><!-- /id replay-->
+
+						<div id="post-answer" class="row-fluid">
+						<div class="offset4 span8"><!-- replay -->
+							
+							<form>
+  								<textarea placeholder="Type message"></textarea>
+  								<input type="submit" class="btn btn-success pull-right" value="Submit">
+  								</input>
+							</form>
+
+						</div><!-- /span (replay) -->
+						</div><!-- /id post-answer-->
+						
+					</div><!-- /forum-body-->
+				</div><!-- /shadow-box-->
+
+			</div><!-- /engage-block-->
+		</div><!-- /row-fluid-->
+		<!-- ============ and Design Block ============= -->
+
+		<!-- ============ Build Block ============= -->
+		<div class="row-fluid">
+			<div class="forum-block">
+				<div class="engage-image block-line">
+					<img src="images/forum/build-image.png" alt="build-image">
+				</div><!-- /engage-block -->
+
+				<div class="shadow-box pull-right">
+					<div class="forum-header">
+						<div class="idea-name-logo">
+							<img class="img-header" src="images/default-startup-profile.png" alt="default-startup-profile">
+							<p>Zizzam Idea</p>
+						</div><!-- /idea-name-logo-->
+
+						<div class="header-path">
+							<p>Zizzam just became a startup</p>
+						</div><!--  / header-path-->
+					</div><!-- /forum-header-->
+
+					<div class="forum-body">
+						<div id="comment" class="row-fluid"><!-- comment -->
+						<div class="forum-user">
+							<img src="images/forum/avatar.jpg">
+							<p>Jenifar</p>
+						</div><!-- /forum-user-->
+						<div id="post-comment" class="row-fluid">
+						<div class=" span11"><!-- replay -->
+							<form>
+  								<textarea placeholder="Type message"></textarea>
+  								<input type="submit" class="btn btn-success pull-right" value="Submit">
+  								</input>
+							</form>
+						</div><!-- /span (replay) -->
+						</div><!-- /id post-answer-->
+						</div><!-- /row-fluid (comment) -->			
+						
+						
+					</div><!-- /forum-body-->
+				</div><!-- /shadow-box-->
+
+			</div><!-- /engage-block-->
+		</div><!-- /row-fluid-->
+		<!-- ============ and Build Block ============= -->
+
+		<!-- ============ Getviable Block ============= -->
+		<div class="row-fluid">
+			<div class="forum-block">
+				<div class="engage-image block-line">
+					<img src="images/forum/getviable-image.png" alt="engage-image">
+				</div><!-- /engage-block -->
+
+				<div class="shadow-box pull-right">
+					<div class="forum-header">
+						<div class="idea-name-logo">
+							<img class="img-header" src="images/default-startup-profile.png" alt="default-startup-profile">
+							<p>Zizzam Idea</p>
+						</div><!-- /idea-name-logo-->
+
+						<div class="header-path">
+							<p>Zizzam just became a startup</p>
+						</div><!--  / header-path-->
+					</div><!-- /forum-header-->
+
+					<div class="forum-body">
+						<div id="comment" class="row-fluid"><!-- comment -->
+						<div class="forum-user">
+							<img src="images/forum/avatar.jpg">
+							<p>Jenifar</p>
+						</div><!-- /forum-user-->
+						<div class="comments-replay">
+							<div class="user-comment-bg">
+							<div class="user-comment">
+								<p>Zizzam can now access:<br>
+									Expert suppert from team and other startus peers in the forum <br>
+									Our mentro Marketplace
+								</p>
+								<p class="info">October 1 at 7.33pm</p>
+							</div><!-- /comment -->
+							</div><!-- /user-comment-bg-->
+
+							<div class="comment-info">
+								<ul>
+									<li>
+										<img src="images/forum/forum-comment.png">
+										<p><span>10</span> comments |</p>
+									</li> 
+									<li>
+										<img src="images/forum/forum-minus.jpg">
+										<a href=""> See all comments</a>
+									</li>
+								</ul>
+							</div><!-- /comments-info -->
+						</div><!-- /comments-replay -->
+						</div><!-- /row-fluid (comment) -->
+																
+					</div><!-- /forum-body-->
+				</div><!-- /shadow-box-->
+
+			</div><!-- /engage-block-->
+		</div><!-- /row-fluid-->
+		<!-- ============ and Getviable Block ============= -->
+
+	</div><!-- /span-->
+</div><!-- /(id) forum field -->
+
+  <!-- ______________________________and Forum field___________________________________-->
+ 
+
+<!-- ______________________________and old Forum field___________________________________-->
+
+  <br />
+
+<!--if can edit-->
+
+ 
+ 
+
+ 
+
+    
+     </div> <!-- /container -->
+
+	<div class="clear30"></div>
+   </div><!--mid-background-->
+
+
+
+
+   <div id="footer-cover">
+	<div class="clear20"></div>
+    <footer>
+        <p>&copy; 2012. All rights reserved.</p>
+ 
+       </footer>
+   </div> <!--footer-cover-->
+
+   
+
+
+	<div id="new-concept-form" title="ADD IDEA">
+ 		<form accept-charset="UTF-8" action="/my/concepts" class="new_concept" id="new_concept" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Ckof1DKLUriFikmYpNx6px5clcXtZh2e3joladCIJhY=" /></div>
+
+
+			 
+ 
+
+  <div class="field">
+    <label for="concept_title">Title</label>
+    <input id="concept_title" name="concept[title]" placeholder="Give a provisional name to your startup" size="30" type="text" />
+  <p class="close-small-text">This will be used as the public name for your idea - it can be changed ant time</p>
+
+  </div>
+  <div class="field">
+    <label for="concept_description">Description</label>
+ 
+    <textarea class="small-text-area" cols="40" id="concept_description" name="concept[description]" placeholder="In a sentence or two, tell people what problem you are solving." rows="20">
+</textarea>
+    <p class="close-small-text" > This is simply to let people know your focus. It is Not what you are doing or how you are doing it. It can be changed any time.</p>
+  </div>
+ 
+ 
+  <div class="field small_form_input">
+	<label for="concept_dob">Date of Birth?</label>
+	 <input id="concept_dob" name="concept[dob]" size="30" type="text" />
+  </div>
+
+  <div class="field">
+    <label for="concept_inustry_id">What industry is this idea in</label>
+   <select id="concept_industry_id" name="concept[industry_id]"><option value="1">Classifieds &amp; LocalClassifieds</option>
+<option value="2">Digital &amp; Technology</option>
+<option value="3">Education &amp; Government</option>
+<option value="4">Finance</option>
+<option value="5">Healthcare &amp; Wellbeing</option>
+<option value="6">Media &amp; Entertainment</option>
+<option value="7">Professional &amp; Consumer Services</option>
+<option value="8">Retail &amp; Consumer Goods</option>
+<option value="9">Transport</option>
+<option value="10">Travel &amp; Tourism</option></select>
+ </div>
+ 
+  <div class="form-actions">
+    <input class="btn" name="commit" type="submit" value="SAVE" />
+    <a href="http://startupmyidea.com/my/concepts" class="btn pull-right">Cancel</a>
+  </div>
+ 
+
+
+
+</form>	
+	   
+	</div><!-- /new concept form -->
+	
+	
+	
+ 
+ 
+	<script src="javascripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="javascripts/jquery_ujs.js" type="text/javascript"></script>
+    <script src="javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="javascripts/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+    <script src="javascripts/ckeditor/ckeditor.js?1355095924" type="text/javascript"></script>
+    <script src="javascripts/rails.validations.js?1355095924" type="text/javascript"></script>
+    <script src="javascripts/liteaccordion.jquery.min.js" type="text/javascript"></script>
+    <script src="javascripts/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="javascripts/jquery.carouFredSel-6.0.4.js" type="text/javascript"></script>
+    <script src="javascripts/jquery.rating.js" type="text/javascript"></script>
+    <script src="javascripts/video-popup.js" type="text/javascript"></script>
+	<script src="javascripts/application.js" type="text/javascript"></script>
+    <script src="javascripts/my.js" type="text/javascript"></script>
+    
+     
+ <script>
+
+
+jQuery.fn.alertMe = function() {
+ 	$(this).click(function(){
+	   //$(this).parent().css('background', 'red');
+	alert("l");
+	});
+  return this;
+}
+
+jQuery.fn.loadForm = function() {
+ 	theurl = $(this).data('url');
+	//         //$('.loading_new').show();
+	//        $.ajax({
+	//       type: "GET",
+	//        url: theurl,
+	//               dataType: 'script',
+	//       success: function( data ) {
+	//                // $('.remove-form').css("background", "red");
+	//             //  $('.loading_new').hide();
+	//           
+	//    
+	//           }
+	//        });
+}
+
+
+
+ 	function answersubmit(next) {
+	    var total = $('.answering').length;
+	    $('.answering').each(function(index) {
+		
+		      $(this).submit();
+			   
+			 if (index === total - 1) {
+				  	setTimeout(function() {
+			  	        $('.the_tasking').submit();
+				 	}, 2000);
+			      
+			}
+           next();
+		});
+    
+     }
+	
+  //  function taskingsubmit(next) {
+  //  	$('.the_tasking').submit();
+  //  	 next();
+  // }
+
+
+ 
+      $(function() {
+
+		
+	 $("#task-link").hide();
+	
+	 $('.saving-progress').hide();	
+		
+      $('#responsive').liteAccordion({
+
+      "responsive": true, 
+      "autoScaleImages" : false ,
+      "activateOn" : 'hover',
+      "slideSpeed" : 1600,
+      "containerHeight":120, // fixed (px)
+      "headerWidth" : 60,
+      "firstSlide" : 1,
+      "containerWidth":400,
+       "pauseOnHover": true,
+      "linkable" :true
+      });
+
+ 
+ 
+
+
+$('.loading_new').hide();
+
+ 
+
+
+     $(document).on("click", ".addnew", function(event) {
+        theurl = $(this).data('url');
+         //$('.loading_new').show();
+        $.ajax({
+       type: "GET",
+        url: theurl,
+               dataType: 'script',
+       success: function( data ) {
+                // $('.remove-form').css("background", "red");
+             //  $('.loading_new').hide();
+           
+    
+           }
+        });
+ 
+     });
+ 
+	$(document).on('click', '.remove-form', function(){
+	    $(this).parent('form').remove();
+	});
+
+ 
+ 
+ 
+
+
+         $('.the-form').on("change", ".mainyesno-select", function(event) {
+            //$(this).parents("form").submit();
+                    if($(this).val() == 'yes'){
+                        $('.main-yes').show();	
+                        $('.main-no').hide();
+            }
+                   else if($(this).val() == 'no'){
+                       $('.main-no').show();	
+                       $('.main-yes').hide();
+            }
+         });
+
+      
+       $('.hidden_question').hide();
+
+     
+    var defaultUsername = $('.mainyesno-select').val();
+
+     if ( defaultUsername == 'yes' ) {
+       $('.main-yes').show();	
+     }
+
+     if ( defaultUsername == 'no' ) {
+       $('.main-no').show();	
+     }
+
+     });
+
+
+ 
+
+
+$('#tasking_message').val("");
+$("#tasking").on("click", function(event){
+	event.preventDefault(); 
+	 $('.saving-progress').show();
+	$(".q_and_a").each(function() {
+	   if($(this).val() === "") {
+		 $("#tasking_state").val("wip");
+		 return false; 
+	    }
+	   else if ($(this).val().length > 0) {
+	    $("#tasking_state").val("done");
+	    }
+	});
+	
+	$(this).queue(answersubmit);
+	//.queue(taskingsubmit);
+
+ 
+   //$('.answering').queue(function(next) {
+   //        $(this).submit();
+   //        next();
+   //});
+   //
+	
+   //$('.the_tasking').submit();
+ 
+})
+
+
+
+//   $('.the-form').on("change", ".yesno-select", function(event) {
+//        $(this).parents("form").submit();
+//    });	
+//
+//   $('.the-form').on("change", ".droppy-select", function(event) {
+//         $(this).parents("form").submit();
+//   });
+//
+//
+//   $('.the-form').on("change", ".selecting_date", function(event) {
+//            $(this).parents("form").submit();
+//    });
+//
+//
+  // $('.the-form').on("change", ".form_textarea", function(event) {
+  //      var c = $(this);
+  //         $.when(
+  //       c.focusout()).then(function() {
+  //      c.parents("form").submit();
+  //       });
+  //  });
+ 
+//   $('.the-form').on("change", ".form_input", function(event) {
+//           var c = $(this);
+//           $.when(
+//           c.focusout()).then(function() {
+//                   c.parents("form").submit();
+//           });
+//    });
+//
+  
+//	 $('.multiple_answer').find('form').submit();
+
+ 
+ //     $('form').submit(function(){
+ 
+ //    })
+     
+     $(".q_and_a").each(function() {
+        if($(this).val() === "") {
+     $("#tasking_state").val("wip");
+     return false;
+         }
+        else if ($(this).val().length > 0) {
+         $("#tasking_state").val("done");
+         }
+     });
+ 
+</script>
+
+<script>
+
+  $(function() {
+
+
+// auto height comments
+
+/*global document:false, $:false */
+    var txt = $('.comment'),
+    hiddenDiv = $(document.createElement('div')),
+    content = null;
+
+   txt.addClass('txtstuff');
+   hiddenDiv.addClass('hiddendiv common');
+
+   $('body').append(hiddenDiv);
+
+   txt.on('keyup', function () {
+        content = $(this).val();
+        content = content.replace(/\n/g, '<br>');
+        hiddenDiv.html(content + '<br class="lbr">');
+        $(this).css('height', hiddenDiv.height());
+    });
+  
+ });
+ 
+
+</script>
+
+
+<script type="text/javascript">
+	$(function() {
+
+		var defaultCss = {
+			width: 180,
+			height: 180,
+         
+		};
+		var selectedCss = {
+				width: 200,
+				height: 180,
+			    marginTop: 0,
+	  
+		};
+		var aniOpts = {
+			queue: false,
+			duration: 500,
+		 
+		};
+		var $car = $('#carousel');
+		for ( var a = 0; a < 3; a++ ) {
+			$car.prepend( '<li />' );
+		}
+		for ( var a = 0; a < 3; a++ ) {
+			$car.append( '<li />' );
+		}
+		$car.find('.task-itm').css( defaultCss );
+		$car.find('.task-itm').eq(0).css( selectedCss );
+		$car.carouFredSel({
+			circular: false,
+			infinite: false,
+			width: '100%',
+			height: 250,
+			items       : {
+			      visible         : 7,     
+			      minimum         : 7,  
+			
+			      start : 0,
+			 
+			  },
+			prev: '#prev',
+			next: '#next',
+			auto: false,
+			scroll: {
+				items: 1,
+				duration: 500,
+			 
+				onBefore: function( data ) {
+					data.items.old.eq(3).find('.task-itm').css('zIndex', 1).animate( defaultCss, aniOpts );
+					data.items.visible.eq(3).find('.task-itm').css('zIndex', 2).animate( selectedCss, aniOpts );
+				}
+			}
+		});
+		
+ 
+		  $('#carousel li').on("click", function(){
+	         //$(this).siblings().removeClass('current_info');
+	          //   $(this).addClass('current_info');
+           var task = $(this).data("taskid");
+
+
+	      var whichUrl = "/my/tasks/"+task+"/task_info";
+	      var taskData = { };
+	      taskData['id'] = task;
+
+	      $.ajax({
+	      type: "GET",
+	      url: whichUrl,
+	      dataType: "json",
+	      data: (taskData),
+	      success: function( data ) {
+
+	      //var html = '';
+	      //var len = data.length;
+	      //for (var i = 0; i< len; i++) {
+	      // html += '<option value="' + data[i].id + '">' + data[i].title + '</option>';
+	      //}
+	      //$('#question_task_id').html(html);
+	      $('#task-title').html(data.title);
+	      $("#task-description").html(data.description);
+	      var new_url = 'http://startupmyidea.com/'+'my/tasks/'+data.id+'/?&concept='+90+'&stage='+1
+	      //$("#task-link").show().attr("href", new_url );
+	      //$('.the_task_vid').hide();
+	     // $('#show-hide-area').hide();
+           	 
+	               },
+	      complete: function(){
+
+	      },
+	      error: function (data) {
+	      // alert("error");
+	      }
+	      });
+
+	         });
+		
+		
+	});
+</script>
+
+
+
+
+  </body>
+</html>

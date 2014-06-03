@@ -1,0 +1,5 @@
+<%= render "/public_activity/shared/notification", :idea => @event.trackable.response_set.idea, :user => @event.owner %>
+<p>
+	<% section = SurveySection.find @event.trackable.survey_section_id%>
+	<span class="bold"><%= @event.trackable.response_set.idea.title %></span>-<span class="bold"> <%= @event.owner.name %></span> added answer to <span class="bold"><%= section.title %></span> in <%= section.stage.title %>
+</p>

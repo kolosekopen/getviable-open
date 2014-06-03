@@ -1,0 +1,19 @@
+	          	<div class="forum-header">
+	          		<div class="pull-left stage-left">
+	          			<div class="img-header">
+	          				<%= image_tag idea.photo.url(:square) %>
+	          			</div><!--/img-header-->
+	          			<div class="stage-box" style="background:<%= activity.stage?.color%>"></div>
+	          		</div><!--/stage-left-->
+	          		<div class="header-text-box">
+	          			<h3><%= idea.title %></h3>
+	          			<div class="header-path">
+	          				<% if idea.public?(current_user) && !idea.is_owner?(current_user)%>
+	          				<p><%= " has #{activity.status?} #{activity.survey_section.title} in #{activity.survey_section.stage.title}" %></p>
+	          				<% else %>
+	          				<p><%= " has #{activity.status?} #{link_to(activity.survey_section.title, edit_tour_path(:idea_id => idea.id, :section => activity.survey_section))} in #{activity.survey_section.stage.title}".html_safe %></p>
+	          				<% end %>
+	          			</div><!--  / header-path-->
+	          		</div><!--  /header-text-box-->
+
+	          	</div><!-- /forum-header-->

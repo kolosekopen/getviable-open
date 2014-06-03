@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.getviable.com/</loc>
+</url>
+<url>
+  <loc>http://www.getviable.com/users/sign_up</loc>
+</url>
+<url>
+  <loc>http://www.getviable.com/users/sign_in</loc>
+</url>
+<url>
+  <loc>http://www.getviable.com/pages/about_us</loc>
+</url>
+<url>
+  <loc>http://www.getviable.com/featured</loc>
+</url>
+<url>
+  <loc>http://www.getviable.com/active</loc>
+</url>
+<url>
+  <loc>http://www.getviable.com/newest</loc>
+</url>
+<url>
+  <loc>http://www.getviable.com/pages/privacy</loc>
+</url>
+<url>
+  <loc>http://www.getviable.com/pages/terms_conditions</loc>
+</url>
+</urlset>

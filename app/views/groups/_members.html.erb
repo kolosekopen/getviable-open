@@ -1,0 +1,18 @@
+<div class="row-fluid">
+		<div class="shadow-box idea-likes">
+			<ul>
+				<% members.each do |member|%>
+				  <%= render 'member', :member => member %>
+				<% end unless members.nil?%>
+			</ul>
+		</div><!--/shadow-box-->
+</div><!--/row-fluid-->
+
+     <!--script for tooltip -->
+     <script type="text/javascript">
+        $(document).ready(function(){
+            if($("[rel=tooltip]").length){
+                $("[rel=tooltip]").tooltip();
+            }
+        });
+     </script>

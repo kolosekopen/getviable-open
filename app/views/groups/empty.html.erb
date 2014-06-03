@@ -1,0 +1,124 @@
+<div class="row-fluid box-row-title">
+    <h1>Activity<span class="text-grey"> &gt; All Connections</span></h1>   
+     
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<!-- SIDE BAR VISIBLE TO PHONE 
+			==========================-->
+		<div class="mini-layout-sidebar visible-phone">
+			<div class="box-search">
+		        <form class="form-search">
+		            <input type="text" class="input-medium search-query" placeholder="search people">
+		            <button type="submit" class="btn btn-info">
+		              <i class="icon-search icon-white"></i></button>
+		        </form>
+		      </div><!--/box-search-->
+		<div class="accordion" id="accordion2">	 
+                
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle collapsed green-bg" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+                      ACTIVITY
+                    </a>
+                  </div>
+                  <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
+                    <div class="accordion-inner">
+		      	<ul>
+		      		<li><a href="">All Connection (<span class="blue-col">0</span>)</a></li>
+		      		<li><a href="">Trusted by (<span class="blue-col">0</span>)</a></li>
+		      		<li class="divider"></li>
+		      		<li><a href="">My Ideas (<span class="blue-col">3</span>)</a></li>
+		      	</ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-group">
+                  <div class="accordion-heading">
+                    <a class="accordion-toggle yellow-bg" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                      EXPLORE IDEAS
+                    </a>
+                  </div>
+                  <div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
+                    <div class="accordion-inner">
+                      <ul>
+		      		<li><a href="" class="bold">Startups</a></li>
+		      		<li class="active"><a href="">Featured</a></li>
+		      		<li><a href="">Most Active</a></li>
+		      		<li><a href="">Newest</a></li>
+		      		<li class="divider"></li>
+		      		<li><a href="" class="bold">Ideas</a></li>
+		      		<li><a href="">All Ideas</a></li>
+		      		<li><a href="">Liked ideas (<span class="blue-col">3</span>)</a></li>
+		      	</ul>
+                    </div>
+                  </div>
+                </div>
+              </div><!--/collapse-group-->
+              </div><!--/mini-side-bar-->
+
+
+              <!-- ACTIVITY BODY
+              ======================
+              ======================-->
+		<div class="mini-layout-body">
+				<div class="shadow-box activity-empty-container">
+					<p>As soon as you've added an idea, or become a team member of another idea <br> you'll see updates here.</p>
+					<!--h4>Look over there... on the right</h4-->
+					<%= link_to "ADD AN IDEA", new_idea_path, {:remote => true, 'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true, :class => "btn btn-success btn-large"} %>
+					<h4 class="normal">We keep the detail of your ideas private.</h4>
+					<!--h4>Alternatively, <a href="">Invite your friends.</a></h4-->
+					<i class="big-right-arrow arrow-position"></i>
+				</div><!--/shadow-box-->
+
+				    <!-- Video-->
+				      <div class="row-fluid shadow-box light-grey-bg">
+				        <h3 class="normal padd-20-l">What to expect?</h3>
+				      </div><!--/row-fluid-->
+
+				      <div class="row-fluid center mar-25-t-b">
+				             <!-- This is place for video
+				              =========================-->
+				              
+				      </div><!--/row-fluid-->
+				    <!-- and Video-->
+			</div><!--/mini-layout-body-->
+
+		<!-- SIDE BAR VISIBLE TO TABLET AND DESKTOP 
+			=======================================-->
+		<div class="mini-layout-sidebar hidden-phone">
+			<div class="box-search">
+		        <form class="form-search">
+		            <input type="text" class="input-medium search-query" placeholder="search people">
+		            <button type="submit" class="btn btn-info">
+		              <i class="icon-search icon-white"></i></button>
+		        </form>
+		      </div><!--/box-search-->  
+
+		      <div class="shadow-box">
+		      	<ul>
+		      		<li class="green-bg">ACTIVITY</li>
+		      		<li><a href="">All Connection (<span class="blue-col">0</span>)</a></li>
+		      		<li><a href="">Trusted by (<span class="blue-col">0</span>)</a></li>
+		      		<li class="divider"></li>
+		      		<li><a href="">My Ideas (<span class="blue-col">3</span>)</a></li>
+		      	</ul>
+		      </div><!--/shadow-box--> 
+
+		      <div class="shadow-box">
+		      	<ul>
+		      		<li class="yellow-bg">EXPLORE IDEAS</li>
+		      		<li><a href="" class="bold">Startups</a></li>
+		      		<li class="active"><a href="">Featured</a></li>
+		      		<li><a href="">Most Active</a></li>
+		      		<li><a href="">Newest</a></li>
+		      		<li class="divider"></li>
+		      		<li><a href="" class="bold">Ideas</a></li>
+		      		<li><a href="">All Ideas</a></li>
+		      		<li><a href="">Liked ideas (<span class="blue-col">3</span>)</a></li>
+		      	</ul>
+		      </div><!--/shadow-box--> 
+		</div><!--/mini-layout-sidebar-->
+	</div><!--/row-fluid-->
+</div><!--/container-fluid-->

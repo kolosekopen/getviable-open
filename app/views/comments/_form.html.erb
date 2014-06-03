@@ -1,0 +1,17 @@
+
+                  <%=form_for Comment.new, 
+                :url    => comments_path,
+                :format => :json, :remote => true do |f|%>
+
+        <%=f.hidden_field :commentable_id, 
+                          :value=> commentable.id, 
+                          :class => 'new-comment-commentable-id' %>
+        <%= f.hidden_field :commentable_type, 
+                           :value => commentable.class.name, 
+                           :class => 'new-comment-commentable-type' %>
+
+          <%=f.text_area :comment,
+                         :id => :comment,  
+                         :placeholder => 'Type message...' %>
+        <%=f.submit "Submit", :class=>"btn btn-success"%>
+     <%end%>

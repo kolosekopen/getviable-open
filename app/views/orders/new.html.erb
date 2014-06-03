@@ -1,0 +1,109 @@
+<!-- Ask expert page
+  ================================
+  =================================-->
+<div class="mid-background padding-bottom expert-page">
+  <div class="container">
+      
+  <%= render 'partials/idea_header', :idea => @idea %>
+
+
+
+
+<!-- Ask expert page- Confirm and Pay
+  =====================================
+  ===================================== -->
+<div id="dashboard" class="shadow-box unselect">
+
+<!-- ============== Introduction ============= -->
+  <div class="row-fluid introduction-box">
+    
+    <div class="span3"> 
+      <div class="task-video">
+        
+
+        </div><!-- /task-video -->      
+    </div><!-- /span3-->
+
+
+
+    <div class="span8">
+    <div class="pull-left intro-box">
+      <h1>Checkout</h1>
+      <p class="intro">You're almost done!</p>
+    </div><!-- /pull-left-->    
+    </div><!-- /span-->
+
+    
+    
+  </div><!-- and row-fluid introduction-box-->
+  <!-- ============== and Introduction ============= -->
+<div id="form-row">
+    <div class="row-fluid"><!-- row-fluid (form-box)-->
+      <div class="span9 offset2">
+       
+
+
+         <!-- ============== Input field ============= -->
+          <div class="row-fluid">
+          <div class="span10 offset2 form-row experts-form">
+            <div class="form-inline">                     
+                <div class="form-box ">
+
+                  <h3 class="green">Purchase Details</h3>
+
+                  <div class="well well-large">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                         <td class="bold">Package upgrade:</td>
+                          <td><%= Package::PACKAGES[@package.reserved_package].capitalize %></td>
+                        </tr>
+                        <tr>
+                          <td class="bold">Subtotal:</td>
+                          <td>$<%= @package.reserved_upgrade_price %> <%= paypal_currency %></td>
+                        </tr>
+                        <tr>
+                          <td class="bold">Tax:</td>
+                          <td>$00.00 <%= paypal_currency %></td>
+                        </tr>
+                        <tr>
+                          <td class="bold green">Total:</td>
+                          <td class="bold">$<%= @package.reserved_upgrade_price %> <%= paypal_currency %></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <em><span class="red">*</span> Taxes are based on your billing address</em>
+                  </div>
+
+                  <p>You have authorised a payment of $<%= @package.reserved_upgrade_price %> <%= paypal_currency %> from your PayPal account.</p>
+                  <p>To complete this purchase, click &quot;Pay now&quot;</p>
+
+                  <%= form_for @order do |f| %>
+                  <%= f.hidden_field :express_token %>
+                  <%= f.hidden_field :package_code %>
+                  <div id="button-row">
+                    <div class="row-fluid">
+                      <%= f.submit "Pay now", :class =>"btn btn-warning", :disable_with => "Processing..." %>
+                    </div><!-- /row-fluid -->
+                  </div><!-- /and (id) button-row -->
+                  <% end %>
+
+                </div><!-- /form-box-->
+            </div><!-- /form-inline-->
+          </div><!-- /span7 -->
+          </div><!-- /row-fluid --> 
+          <!-- ============== and Input field ============= -->
+    
+      </div><!-- /span9 -->
+    </div><!-- /(id) form-row --> 
+  </div>
+
+
+
+
+</div><!--/dashboard-->
+
+
+  </div><!--/container-->
+</div><!--/mid-background-->
+

@@ -1,0 +1,35 @@
+				<li>
+					<div class="row-fluid  padd-10">
+						<div class="profile-info-box">
+				          <div class="default-profile">
+				          	<%= image_tag member.image? %>
+				          </div><!-- /default-profile-->
+
+				          <div class="profile-info-text">
+				          <h3 class="p-name"><%= link_to member.name, "#" %>
+				          	<span class="normal text-grey font12"><%= member.location %></span></h3>
+				          
+				          <p class="profile-basic-info"><%= member.description %></p>				          
+				          </div><!--/profile-info-text-->
+
+
+        				</div><!--/profile info-box-->
+				          <div class="row-fluid latest-ideas">
+				          	<h6 class="text-grey">Latest Ideas:</h6>
+				          	<ul>
+				          		<% member.ideas.each do |idea|%>
+				          		<li><div class="company-image">
+				          			<%= link_to image_tag(idea.photo.url(:small)), idea_path(idea), :data => {'placement' => 'right', 'original-title' => idea.title}%>
+					              	</div>
+					            </li>
+				          		<% end %>
+				          		
+					            <!-- display max 8 items-->			            
+
+				          	</ul>
+				          </div><!--/latest-ideas-->
+						<div class="pull-right center">
+							<!--a class="btn btn-small btn-info">CONNECT</a-->
+						</div>
+					</div><!--/row-fluid-->
+				</li>

@@ -1,0 +1,173 @@
+<% title "GetViable - Edit #{@idea.title}" %>
+
+  <%= render 'payment_section' if Setting.payments_enabled == 'true' %>
+
+<div id="idea" class="row-fluid logged-bg"> 
+    <div class="row-fluid box-row-title">
+      <h3>Edit Idea Profile</h3> 
+ 
+    </div><!-- /row-fluid--> 
+
+  <div class="row-fluid user-padd"> 
+  <!-- ============ Form =================== -->
+    <style type='text/css'>
+
+#getDatepickerEdit {
+    z-index: 2000;
+}
+</style>
+<script>
+$(function() {
+  $("#getDatepickerEdit").datepicker();
+});
+
+</script> 
+
+    <%= form_for @idea, :html => { :multipart => true }, :validate => true do |f| %>  
+    <div class="form-inline">   
+
+              <div class="form-box form-sett">   
+                <label class="span2">Idea Name</label>
+                <span class="pull-left red">*</span>
+                <div class="span7">
+                <%= f.text_field :title, :placeholder => "Idea Name", :class => "pull-left"%><br>
+                <em>This is the public name for your idea.</em>
+                </div>
+              </div><!-- /form-box-->
+
+              <div class="form-box form-sett">   
+                <label class="span2" for="user_last_name">Public Description</label>
+                <span class="pull-left red">*</span>
+                <div class="span7">
+                <em class="pull-right">400 characters allowed</em>
+                <%= f.text_area :description, :class => "pull-left" %><br>
+                <em class="text-description">Let people know your idea's focus. It is NOT what you are doing, or how you are doing it.</em>
+                </div>
+              </div><!-- /form-box-->
+
+              <div class="form-box form-sett">      
+                <label class="span2">Date idea created</label>
+                <!--span class="pull-left red">*</span-->
+                <div class="span7">
+                  <%= f.text_field :date_of_birth, :id => "getDatepickerEdit" %>
+          			<em>It can be changed any time.</em>
+                </div>
+              </div><!-- /form-box-->
+
+              <div class="form-box form-sett">      
+                <label class="span2">Facebook page name</label>
+                <!--span class="pull-left red">*</span-->
+                <div class="span7">
+                  <%= f.text_field :facebook %>
+                  <em>Add your Facebook page name only (Not the full URL)</em>
+                </div>
+              </div><!-- /form-box-->
+
+              <div class="form-box form-sett">      
+                <label class="span2">Twitter handle</label>
+                <!--span class="pull-left red">*</span-->
+                <div class="span7">
+                  <%= f.text_field :twitter %>
+                  <em>Add your twitter handle. (without '@')</em>
+                </div>
+              </div><!-- /form-box-->
+
+              <!--div class="row-fluid">
+                <div class="span6">
+                  <p class="bold">Linked in accoutn</p>
+                </div>
+                <div class="span6">
+                  <%#= f.text_field :linkedin %>
+                  <em>Add your Linkedin account.</em>
+                </div>
+              </div-->
+
+
+              <div class="form-box form-sett">      
+                <label class="span2">Industry the idea is in</label>
+                <!--span class="pull-left red">*</span-->
+                <div class="span7">
+                	<%= f.collection_select :industry_id, Industry.ordered_industries, :id, :title, {:prompt => 'Select one...'} %>
+          			<em>It can be changed any time.</em>
+                </div>                
+              </div><!-- /form-box-->
+                
+
+
+              <div class="form-box form-sett">      
+                <label class="span2">Logo</label>
+                <div class="span7">
+                	<div class="pic">
+                    <%= image_tag @idea.photo.url(:small) %>
+              		</div>
+                  <%= f.file_field :photo, multiple: true, name: "idea[photo]" %>
+                </div>                                 
+              </div><!-- /form-box-->
+
+              <div class="offset2">
+                <%= f.submit "Save profile", :class => "btn btn-info" %>
+              </div><!--/ offset2-->
+
+      </div><!-- /form-inline -->
+<% end %>
+ 
+</div><!-- /row-fluid -->
+  </div><!--/loged-bg-->
+
+ <% if @idea.is_owner? current_user %>  
+
+  <div id="team" class="row-fluid logged-bg"> 
+    <div class="row-fluid box-row-title">
+      <h3>Edit Idea Team</h3> 
+ 
+    </div><!-- /row-fluid--> 
+
+  <div class="row-fluid user-padd"> 
+
+  
+    <div class="form-inline">   
+
+
+              <div class="form-box form-sett">      
+                <div class="span3 text-grey">
+                	Team Member
+                </div>
+                <div class="span5 text-grey">
+                	Member's role
+                </div>
+              </div><!-- /form-box-->
+
+              <%#= render 'owner_member', :member => current_user, :idea => @idea %>
+
+              <% @idea.users.each do |member|%>
+                <%= render 'member', :member => member, :idea => @idea %>
+              <% end unless @idea.users.empty?%>
+
+
+              <%= link_to "Add team member", new_idea_invitation_path(@idea), {:remote => true, 'data-toggle' => 'modal', 'data-target' => "#addTeam", 'data-backdrop' => true, 'data-keyboard' => true, :class => "btn btn-info"} %>
+              
+
+      </div><!-- /form-inline -->
+      </div><!-- /user-padd -->
+<% end %>
+
+  
+</div><!-- /row-fluid logged-bg-->
+
+
+  </div><!--/container-->
+
+
+  <!-- Modal -->
+<div id="addTeam" class="modal-new-idea modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+</div>
+
+     <!--script for tooltip Remove team member-->
+     <script type="text/javascript">
+        $(document).ready(function(){
+            if($("[rel=tooltip]").length){
+                $("[rel=tooltip]").tooltip();
+            }
+        });
+     </script>

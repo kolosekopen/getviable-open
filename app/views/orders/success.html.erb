@@ -1,0 +1,5 @@
+<% if @idea.package.previous_version.previous_version.free? # two steps back %>
+  <%= render 'orders/free_success', :idea => @idea %>
+<% else %>
+  <%= render 'orders/paid_success', :idea => @idea %>
+<% end %>

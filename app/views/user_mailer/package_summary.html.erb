@@ -1,0 +1,8 @@
+Hi, 
+  User #<%= @package.idea.user.id%> upgraded his package:
+
+Previous package: <%= Package::PACKAGES[@package.previous_version.package].humanize %>
+New package: <%= Package::PACKAGES[@package.package].humanize %>
+Idea: #<%= @package.idea.id %>
+
+  Regards, GetViable Team

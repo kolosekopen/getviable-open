@@ -1,0 +1,51 @@
+
+
+<!-- ============ Activity Block ============= -->
+<div class="row-fluid">
+	<div class="forum-block">
+		<% acitivies.each_with_index do |activities_history, index|%>
+		<% activities_history = activities_history.second %>
+		<% activity = activities_history.first %>
+		<% activities_history.reject!{|a| a == activity} %>
+		<script>
+		toggle_visibility = function (id){
+    event.preventDefault();
+
+   var e = $("#"+id);
+   e.toggle();
+   return false;
+}
+		</script>
+		<div class="shadow-box">
+
+	          <!-- STAGE ROW 
+	          ======================-->
+	          <div class="stage-row">
+	          	<div class="forum-header">
+	          		<div class="pull-left stage-left">
+	          			<div class="img-header">
+	          				<%= image_tag idea.photo.url(:square) %>
+	          			</div><!--/img-header-->
+	          			<div class="stage-box <%= activity.stage?.color_name?%>-bg"></div>
+	          		</div><!--/stage-left-->
+	          		<div class="header-text-box">
+	          			<h3><%= idea.title %></h3>
+	          			<div class="header-path">
+	          				<p><%= " has #{activity.status?} #{activity.survey_section.title} in #{activity.survey_section.stage.title}" %></p>
+	          			</div><!--  / header-path-->
+	          		</div><!--  /header-text-box-->
+
+	          	</div><!-- /forum-header-->
+
+	        </div><!-- /stage-row-->
+
+	      </div><!-- /shadow-box-->
+
+
+	      <% end %>
+
+
+
+	    </div><!-- /forum-block-->
+	  </div><!-- /row-fluid-->
+	  <!-- ========== and activity Block ============= -->

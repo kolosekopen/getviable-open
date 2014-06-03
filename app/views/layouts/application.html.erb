@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <%= render "layouts/meta" %>
+
+  </head>
+
+  <body><!-- Some pages have "login" as id -->
+
+    <%if current_user.nil?%>
+      <%= render "layouts/application/header" %>
+    <% else %>
+      <%= render "layouts/dashboard/header" %>
+    <% end %>
+
+    <%= yield %>
+
+    <%= render "layouts/footer"%>
+
+
+</body>
+
+</html>

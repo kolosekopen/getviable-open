@@ -1,0 +1,54 @@
+<div class="row-fluid box-row-title">
+	<h1>Activity<span class="text-grey"> &gt; All Connections</span></h1>   
+	 
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<!-- SIDE BAR VISIBLE TO PHONE 
+			==========================-->
+		<div class="mini-layout-sidebar visible-phone">
+			<div class="box-search">
+				<!--form class="form-search">
+					<input type="text" class="input-medium search-query" placeholder="search people">
+					<button type="submit" class="btn btn-info">
+					  <i class="icon-search icon-white"></i></button>
+				</form-->
+			  </div><!--/box-search-->
+   
+        <% if !current_group.nil? %>
+          <%= render 'group_sidebar_mini' %>
+        <% else %>      
+          <%= render 'sidebar_mini' %>
+        <% end %>      
+   
+		</div><!--/mini-side-bar-->
+
+
+			  <!-- ACTIVITY BODY
+			  ======================
+			  ======================-->
+		<div id="group_activity" class="mini-layout-body">
+          <%= render 'members', :members => @members%>
+		</div><!--/mini-layout-body-->
+
+		<!-- SIDE BAR VISIBLE TO TABLET AND DESKTOP 
+			=======================================-->
+		<div class="mini-layout-sidebar hidden-phone">
+			<div class="box-search">
+				<!--form class="form-search">
+					<input type="text" class="input-medium search-query" placeholder="search people">
+					<button type="submit" class="btn btn-info">
+					  <i class="icon-search icon-white"></i></button>
+				</form-->
+			  </div><!--/box-search-->  
+
+        <% if !current_group.nil? %>
+          <%= render 'group_sidebar' %>
+        <% else %>      
+          <%= render 'sidebar' %>
+        <% end %>
+			  
+		</div><!--/mini-layout-sidebar-->
+	</div><!--/row-fluid-->
+</div><!--/container-fluid-->
